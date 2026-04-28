@@ -13,8 +13,8 @@ BIG FOCUS :: DO NOT TOUCH THIS SECTION
 
 never leave this empy should always be task here, with check boxes, rm complted tasks from prevouse run and leave only fresh uncomplted tasks here
 
+- [ ] **Fresh clone + example verification**: Clone to a clean directory (not existing repo), run `bun install && bun run build`, then test all examples (`bin/stickson.js dev examples/vanilla/src/content.json`, `bin/stickson.js dev examples/sleet-css/src/content.json`, `bin/stickson.js build`, `bin/stickson.js validate`). Must work out of the box on a fresh environment. User reports errors on their end that don't repro on dev machine.
 - [ ] **Document CLI spec**: write a spec covering all CLI commands (`build`, `validate`, `dev`, `serve`, `create`), their flags, arguments, input/output behavior. This should live in `docs/CLI.md` or similar so the team has a single source of truth and doesn't make breaking changes.
-- [x] **Document output directory convention**: clarify that `build` outputs to `dist/` by default, not `out/`. Fixed `docs/INSTALL.md` `out/` → `dist/`. Note: CLI `--help` still says `default: ./out` — needs `cmd_build.ts` fix too.
 - [x] **Validate all CLI commands work**: `build`, `validate`, `dev`, `serve` for both vanilla and sleet-css examples. All confirmed working. `serve` and `dev` require a JSON file path (not an output directory).
 - [x] **Build output inspection**: verified built HTML files are correct and complete for both examples. vanilla outputs index.html, home.html, about.html. sleet-css outputs index.html. Content matches JSON input.
 - [x] **Fix examples/vanilla home.json**: removed the incorrect `routes` block from `home.json` (it was duplicating content from `content.json` and pointing to `src/home.json` instead of `src/about.json`). `home.json` is now a standalone route file without its own routes block.
