@@ -97,6 +97,7 @@
         { "$ref": "#/definitions/header" },
         { "$ref": "#/definitions/footer" },
         { "$ref": "#/definitions/main" },
+        { "$ref": "#/definitions/article" },
         { "$ref": "#/definitions/script" },
         { "$ref": "#/definitions/style" },
         { "$ref": "#/definitions/custom" }
@@ -350,6 +351,21 @@
       "required": ["type", "content"],
       "properties": {
         "type": { "const": "footer" },
+        "id": { "type": "string" },
+        "class": { "type": "string" },
+        "content": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/element" }
+        },
+        "attrs": { "$ref": "#/definitions/attrs" }
+      },
+      "additionalProperties": false
+    },
+    "article": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": { "const": "article" },
         "id": { "type": "string" },
         "class": { "type": "string" },
         "content": {

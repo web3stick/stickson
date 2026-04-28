@@ -15,9 +15,9 @@
           {
             "type": "nav",
             "content": [
-              { "type": "a", "href": "home.json", "content": "Home" },
-              { "type": "a", "href": "about.json", "content": "About" },
-              { "type": "a", "href": "blog.json", "content": "Blog" }
+              { "type": "a", "href": "index.html", "content": "Home" },
+              { "type": "a", "href": "about.html", "content": "About" },
+              { "type": "a", "href": "blog.html", "content": "Blog" }
             ]
           }
         ]
