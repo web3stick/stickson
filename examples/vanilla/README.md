@@ -2,7 +2,6 @@
 
 A minimal stickson site using plain CSS — no frameworks, no build tools. Demonstrates multi-file routing (home + about pages).
 
-
 ## Commands
 
 Short (run inside this folder):

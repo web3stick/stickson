@@ -54,4 +54,3 @@ Stickson (`@web3stick/stickson`) is a JSON framework for making static pages.
 3. `git add + commit` with message describing what was done
 4. `git push` — push commits to origin
 5. `git status` — confirm clean state
-

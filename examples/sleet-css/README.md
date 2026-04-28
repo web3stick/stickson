@@ -2,7 +2,6 @@
 
 A stickson site using [@sleet-css/sleet-css](https://www.npmjs.com/package/@sleet-css/sleet-css) loaded from jsDelivr CDN.
 
-
 ## Commands
 
 Short (run inside this folder):

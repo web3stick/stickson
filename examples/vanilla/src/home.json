@@ -1,14 +1,10 @@
 {
   "version": "1.0",
   "meta": {
-    "title": "My Vanilla Stickson Site",
-    "description": "A simple static site built with stickson and plain CSS",
+    "title": "Home — My Vanilla Stickson Site",
+    "description": "Welcome to my stickson-powered site",
     "author": "Developer",
     "lang": "en"
-  },
-  "routes": {
-    "home": "src/home.json",
-    "about": "src/about.json"
   },
   "page": {
     "head": [

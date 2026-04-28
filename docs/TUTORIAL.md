@@ -176,16 +176,20 @@ This watches your JSON files and rebuilds on changes.
 
 ## Project Structure
 
+A typical stickson project looks like this:
+
 ```
 my-site/
 ├── src/
-│   ├── content.json    # Main entry + routes
-│   ├── home.json      # Home page content
+│   ├── content.json    # Main entry file (becomes index.html) + routes
+│   ├── home.json       # Home page content (when linked via routes)
 │   └── about.json      # About page content
-├── dist/              # Built output
+├── dist/              # Built output (default)
 ├── package.json
 └── README.md
 ```
+
+The main entry file (`content.json`) defines routes to other JSON files. When you build, each route produces a corresponding HTML file:
 
 ## Common Element Types
 
