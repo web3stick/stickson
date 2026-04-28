@@ -1,53 +1,13 @@
 # TODO
 
-## Bugs / Breaking Issues
 
-- [x] `dev` command crashes on startup — uses `require()` but package.json is `"type": "module"` (ESM). Should use `import()` dynamic import instead.
-- [x] `serve` does not build — it requires `out/` folder to exist with pre-built HTML. Does not build on the fly. User must run `build` first.
-- [x] `dev` only watches the entry JSON file — doesn't watch linked JSONs (about.json, blog.json). Only re-builds when the entry file changes.
 
-## CLI / UX Improvements
-
-- [x] `build` should accept a directory and build all JSON files in it
-- [x] `serve` / `dev` should build automatically if `out/` is stale or missing
-- [x] `dev` should watch all linked JSON files (not just the entry file)
-- [x] `dev` should serve the output (run an HTTP server with live reload) — currently it's just a file watcher that logs rebuilds
-- [x] Error messages should be user-friendly (no stack traces for invalid JSON, schema validation should list which field failed)
-
-## Project Structure / Examples
-
-- [x] Delete current `examples/` files (home.json, about.json, blog.json + out/) — they are one multi-page site that needs replacing
-- [x] New example creation flow via CLI: `stickson create my-site` scaffolds `src/content.json`, `package.json`, `README.md` with deps
-- [x] Create example sites in `examples/` using different CSS approaches:
-  - `examples/vanilla/` — plain HTML, no framework
-  - `examples/sleet-css/` — uses a sleet-css theme (colorsnake-css, huggies-css, sticky-css, etc.)
-  - Each example: self-contained folder with `src/`, `package.json`, `README.md`
-- [ ] Future: support `bun create stickson@latest` style entry point as an alternative to `stickson create my-site`
-
-## Schema / Content Issues
-
-- [x] Schema is missing `article` element — added but verify all common HTML elements are covered (section, aside, figure, figcaption, etc.)
-- [x] Audit schema for missing HTML elements — check for: aside, figure, figcaption, details, summary, mark, time, abbr, cite, code, pre, blockquote, hr
-- [ ] Consider: should the schema be more permissive (allow arbitrary HTML tags via `custom` type)?
-
-## Repo Cleanliness / Structure
-
-- [ ] `npm pack --dry-run` after any change to `package.json`, `files` field, or `.npmignore`
-- [x] Add `prepublishOnly` script to `package.json` that runs `bun run build` automatically before publish
-- [x] Type-check and lint: `bun run tsc --noEmit` and `bunx prettier . --write` should pass clean
-
-## Docs / README
-
-- [x] `examples/README.md` and `bin/README.md` created — verify they're accurate
-- [x] Main README should document the full CLI usage (all commands and flags)
-- [x] `docs/INSTALL.md` — verify accuracy after recent changes
-- [x] Add dev dependency usage to `docs/INSTALL.md` — install as dev dependency with `npm install -D @web3stick/stickson`, use via npx or local binary
-- [x] Add `docs/DEV_DEPENDENCY.md` — full guide on using stickson as a local dev dependency with `file:` path
-
-## Publishing / Distribution
-
-- [x] `package.json` has correct `files`, `repository`, `homepage` for npm publish
-- [x] Published v0.0.1 to npm: https://www.npmjs.com/package/@web3stick/stickson
+- [ ] 👋 made some chages to this list sicne last run, ai did it make sure that eveything makes sice before doing, remmeber the goal to make this a more solid package
+- [ ] Replace all npm references with bun in docs/INSTALL.md — `npm install` → `bun add`, `npm install -g` → `bun add -g`, `npm run` → `bun run`, etc. Keep npm package name references (e.g. `@web3stick/stickson` on npm). Do NOT change docs that are already correct.
+- [ ] Replace all npm references with bun in docs/DEV_DEPENDENCY.md — same pattern as above. All `npm install`, `npm run`, `npm uninstall` commands should use bun equivalents.
+- [ ] Fix sleet-css example to use @sleet-css/sleet-css via jsdelivr CDN — the `examples/sleet-css/src/content.json` currently uses `theme.name: "minimal"` with a local `cssFile` path that doesn't exist. Replace the `theme` block to use `theme.cssFile` pointing to the jsdelivr URL: `https://cdn.jsdelivr.net/npm/@sleet-css/sleet-css/css-out/main.css`. Update the `examples/sleet-css/README.md` to reflect this change and remove the "minimal/dark theme" mention since it's using the real @sleet-css package.
+- [ ] Fix examples so they run without dependency installation issues — examples currently use `"@web3stick/stickson": "file:../../.."` which causes `bun install` to fail in the example directory. Fix by: removing the `devDependencies` with `file:` path from `examples/vanilla/package.json` and `examples/sleet-css/package.json`, updating the `build` script to use `bunx stickson` (globally installed or bunx) instead of relying on the local file dep, OR: keep the dep but change it so examples can be tested from the root project using `bun run build:examples` pattern. Goal: user should be able to run `bun bin/stickson.js build examples/vanilla/src/content.json --out /tmp/vanilla-test` without errors.
+- [ ] Test examples build cleanly — after fixing examples, verify both `examples/vanilla/` and `examples/sleet-css/` build without errors using the updated approach.
 
 =====================
 <br/>
