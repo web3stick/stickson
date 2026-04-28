@@ -2,18 +2,6 @@
 
 A minimal stickson site using plain CSS — no frameworks, no build tools. Demonstrates multi-file routing (home + about pages).
 
-## Customizing
-
-Edit `src/home.json` or `src/about.json` to change content. The `routes` field in `src/content.json` links pages together:
-
-```json
-{
-  "routes": {
-    "home": "home.json",
-    "about": "about.json"
-  }
-}
-```
 
 ## Commands
 
