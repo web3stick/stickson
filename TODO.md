@@ -1,7 +1,5 @@
 # TODO
 
-
-
 - [ ] 👋 made some chages to this list sicne last run, ai did it make sure that eveything makes sice before doing, remmeber the goal to make this a more solid package
 - [ ] Replace all npm references with bun in docs/INSTALL.md — `npm install` → `bun add`, `npm install -g` → `bun add -g`, `npm run` → `bun run`, etc. Keep npm package name references (e.g. `@web3stick/stickson` on npm). Do NOT change docs that are already correct.
 - [ ] Replace all npm references with bun in docs/DEV_DEPENDENCY.md — same pattern as above. All `npm install`, `npm run`, `npm uninstall` commands should use bun equivalents.

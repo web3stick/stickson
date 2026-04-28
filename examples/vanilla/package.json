@@ -7,8 +7,5 @@
     "build": "stickson build src/content.json --out dist",
     "dev": "stickson dev src/content.json",
     "validate": "stickson validate src/content.json"
-  },
-  "devDependencies": {
-    "@web3stick/stickson": "file:../../.."
   }
 }

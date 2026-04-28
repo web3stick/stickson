@@ -1,14 +1,13 @@
 {
   "version": "1.0",
   "meta": {
-    "title": "My Stickson Site (Minimal Theme)",
-    "description": "A static site built with stickson using the minimal theme",
+    "title": "My Stickson Site (Sleet CSS)",
+    "description": "A static site built with stickson using @sleet-css/sleet-css",
     "author": "Developer",
     "lang": "en"
   },
   "theme": {
-    "name": "minimal",
-    "cssFile": "node_modules/@web3stick/stickson/themes/minimal/theme.css"
+    "cssFile": "https://cdn.jsdelivr.net/npm/@sleet-css/sleet-css/css-out/main.css"
   },
   "page": {
     "head": [
@@ -100,7 +99,7 @@
               { "type": "h2", "content": "About" },
               {
                 "type": "p",
-                "content": "This site was built with stickson and the minimal theme. Edit the JSON to update content — styles come from the theme."
+                "content": "This site was built with stickson and @sleet-css/sleet-css. Edit the JSON to update content — styles come from the theme."
               },
               {
                 "type": "button",
@@ -114,7 +113,10 @@
       {
         "type": "footer",
         "content": [
-          { "type": "p", "content": "Built with stickson — minimal theme" }
+          {
+            "type": "p",
+            "content": "Built with stickson — @sleet-css/sleet-css edition"
+          }
         ]
       }
     ]

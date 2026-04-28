@@ -1,12 +1,12 @@
 # Stickson Sleet-CSS Example
 
-A stickson site using the built-in minimal theme.
+A stickson site using @sleet-css/sleet-css for styling via CDN.
 
 ## Quick Start
 
 ```sh
-npm install
-npm run build
+bun install
+bun run build
 ```
 
 Output goes to `dist/`.
@@ -23,12 +23,17 @@ sleet-css/
 
 ## Theming
 
-This example uses the `minimal` theme from stickson. You can switch themes by changing `theme.name` in `content.json` or by providing your own CSS via `theme.cssFile`.
+This example uses @sleet-css/sleet-css loaded from jsDelivr CDN. The `theme.cssFile` in `content.json` points to the CDN URL:
 
-Available themes:
+```json
+{
+  "theme": {
+    "cssFile": "https://cdn.jsdelivr.net/npm/@sleet-css/sleet-css/css-out/main.css"
+  }
+}
+```
 
-- `minimal` — clean, light, centered layout
-- `dark` — dark mode with subtle contrast
+You can switch to a different CSS file by changing `theme.cssFile` or by providing your own CSS via `theme.customCss`.
 
 ## Customizing
 

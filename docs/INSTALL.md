@@ -5,7 +5,7 @@ Stickson is a JSON framework for making static pages from JSON content files.
 ## Install globally
 
 ```bash
-npm install -g @web3stick/stickson
+bun add -g @web3stick/stickson
 ```
 
 ## Install as dev dependency
@@ -13,13 +13,13 @@ npm install -g @web3stick/stickson
 In an existing project, add stickson as a dev dependency:
 
 ```bash
-npm install -D @web3stick/stickson
+bun add -D @web3stick/stickson
 ```
 
-Then use it via npx or the local binary:
+Then use it via bunx or the local binary:
 
 ```bash
-npx stickson build content.json --out dist
+bunx stickson build content.json --out dist
 # or from node_modules
 ./node_modules/.bin/stickson build content.json --out dist
 ```
@@ -39,18 +39,18 @@ With a package.json scripts section:
 
 ```bash
 # Install stickson globally
-npm install -g stickson
+bun add -g @web3stick/stickson
 
 # Create a new project
 stickson create my-site
 cd my-site
-npm install
+bun install
 
 # Build the site
-npm run build
+bun run build
 
 # Or serve with live reload
-npm run dev
+bun run dev
 ```
 
 ## Project Structure
@@ -85,11 +85,11 @@ my-site/
 
 ## CLI Commands
 
-- `npx stickson create <name>` - Scaffold a new project
-- `npx stickson validate <file>` - Validate JSON against schema
-- `npx stickson build [--single]` - Build static pages
-- `npx stickson serve <file>` - Serve with live reload
-- `npx stickson dev <file>` - Watch and rebuild on changes
+- `bunx stickson create <name>` - Scaffold a new project
+- `bunx stickson validate <file>` - Validate JSON against schema
+- `bunx stickson build [--single]` - Build static pages
+- `bunx stickson serve <file>` - Serve with live reload
+- `bunx stickson dev <file>` - Watch and rebuild on changes
 
 ## Themes
 
