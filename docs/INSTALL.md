@@ -61,7 +61,7 @@ After creating a project, you'll have:
 my-site/
 ├── content.json    # Your page content
 ├── package.json    # Project config
-└── out/            # Built output
+└── dist/           # Built output
 ```
 
 ## content.json
