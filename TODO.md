@@ -1,6 +1,6 @@
 # TODO
 
-BIG FOUR
+BIG FOCUS :: DO NOT TOUCH THIS SECTION
 
 - working examples
 - builds working, verify by checking output files
@@ -9,11 +9,11 @@ BIG FOUR
 
 ---
 
-- [x] 1. README.md — REMOVE the entire "Examples" section (the vanilla + sleet-css code blocks). Those belong in each example's own README.
+## TO DO
+never leave this empy should always be task here, with check boxes, rm complted tasks from prevouse run and leave only fresh uncomplted tasks here
 
-- [x] 2. examples/README.md — CREATE: (done caea948)
-- [x] 3. examples/vanilla/README.md — SIMPLIFY: (done caea948)
-- [x] 4. examples/sleet-css/README.md — SIMPLIFY: (done caea948)
+- [ ]
+- [ ]
 
 =====================
 <br/>
