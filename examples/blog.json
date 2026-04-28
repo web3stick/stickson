@@ -1,0 +1,56 @@
+{
+  "version": "1.0",
+  "meta": {
+    "title": "Blog - My Stickson Site",
+    "description": "Articles and updates",
+    "lang": "en"
+  },
+  "page": {
+    "head": [],
+    "body": [
+      {
+        "type": "header",
+        "content": [
+          { "type": "h1", "content": "Blog" },
+          {
+            "type": "nav",
+            "content": [
+              { "type": "a", "href": "home.json", "content": "Home" },
+              { "type": "a", "href": "about.json", "content": "About" },
+              { "type": "a", "href": "blog.json", "content": "Blog" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "main",
+        "content": [
+          {
+            "type": "article",
+            "content": [
+              { "type": "h3", "content": "Getting Started with Stickson" },
+              {
+                "type": "p",
+                "content": "Learn how to build static sites with JSON and stickson."
+              }
+            ]
+          },
+          {
+            "type": "article",
+            "content": [
+              { "type": "h3", "content": "Theming Your Site" },
+              {
+                "type": "p",
+                "content": "Customize your site appearance with CSS themes."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "footer",
+        "content": [{ "type": "p", "content": "Built with stickson" }]
+      }
+    ]
+  }
+}

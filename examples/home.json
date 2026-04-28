@@ -1,0 +1,79 @@
+{
+  "version": "1.0",
+  "meta": {
+    "title": "My Stickson Site",
+    "description": "A beautiful static site built with stickson",
+    "author": "Developer",
+    "lang": "en"
+  },
+  "routes": {
+    "about": "about.json",
+    "blog": "blog.json"
+  },
+  "page": {
+    "head": [
+      {
+        "type": "style",
+        "content": "body { font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 2rem; }"
+      }
+    ],
+    "body": [
+      {
+        "type": "header",
+        "content": [
+          {
+            "type": "h1",
+            "content": "Welcome to Stickson"
+          },
+          {
+            "type": "nav",
+            "content": [
+              { "type": "a", "href": "#home", "content": "Home" },
+              { "type": "a", "href": "#about", "content": "About" },
+              { "type": "a", "href": "#blog", "content": "Blog" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "main",
+        "content": [
+          {
+            "type": "section",
+            "content": [
+              { "type": "h2", "content": "Getting Started" },
+              {
+                "type": "p",
+                "content": "This is a sample home page built with the stickson JSON framework."
+              },
+              {
+                "type": "button",
+                "content": "Get Started",
+                "onclick": "alert('Hello from stickson!')"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "content": [
+              { "type": "h2", "content": "Features" },
+              {
+                "type": "ul",
+                "content": [
+                  { "type": "li", "content": "Simple JSON-based content" },
+                  { "type": "li", "content": "Flexible HTML templates" },
+                  { "type": "li", "content": "Custom CSS theming" },
+                  { "type": "li", "content": "Route-based multi-page support" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "footer",
+        "content": [{ "type": "p", "content": "Built with stickson" }]
+      }
+    ]
+  }
+}

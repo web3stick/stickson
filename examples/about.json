@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "meta": {
+    "title": "About - My Stickson Site",
+    "description": "Learn more about our project",
+    "lang": "en"
+  },
+  "page": {
+    "head": [],
+    "body": [
+      {
+        "type": "header",
+        "content": [
+          { "type": "h1", "content": "About Us" },
+          {
+            "type": "nav",
+            "content": [
+              { "type": "a", "href": "home.json", "content": "Home" },
+              { "type": "a", "href": "about.json", "content": "About" },
+              { "type": "a", "href": "blog.json", "content": "Blog" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "main",
+        "content": [
+          {
+            "type": "section",
+            "content": [
+              { "type": "h2", "content": "Our Mission" },
+              {
+                "type": "p",
+                "content": "We build simple, fast static sites using JSON."
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "content": [
+              { "type": "h2", "content": "Contact" },
+              { "type": "p", "content": "Reach us at hello@example.com" },
+              {
+                "type": "a",
+                "href": "mailto:hello@example.com",
+                "content": "Email Us"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "footer",
+        "content": [{ "type": "p", "content": "Built with stickson" }]
+      }
+    ]
+  }
+}

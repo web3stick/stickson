@@ -1,0 +1,117 @@
+/* Dark theme for stickson */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  line-height: 1.6;
+  color: #e0e0e0;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background: #1a1a1a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin: 1em 0;
+}
+
+header,
+footer {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+header {
+  border-bottom: 1px solid #333;
+  margin-bottom: 2rem;
+}
+
+footer {
+  border-top: 1px solid #333;
+  margin-top: 2rem;
+  color: #888;
+  font-size: 0.875rem;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+nav a {
+  color: #66b3ff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+a {
+  color: #66b3ff;
+}
+
+button {
+  background: #66b3ff;
+  color: #1a1a1a;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: #99ccff;
+}
+
+section {
+  margin: 2rem 0;
+}
+
+ul,
+ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
