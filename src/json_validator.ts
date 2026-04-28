@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const SCHEMA_PATH = path.resolve(__dirname, "../schema/content-schema.json");
 
-const ajv = new Ajv({ allErrors: true, strict: true });
+const ajv = new Ajv({ allErrors: true, strict: true, allowUnionTypes: true });
 addFormats(ajv);
 
 let schemaCache: object | null = null;
