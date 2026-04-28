@@ -27,7 +27,7 @@
 ## Schema / Content Issues
 
 - [x] Schema is missing `article` element — added but verify all common HTML elements are covered (section, aside, figure, figcaption, etc.)
-- [ ] Audit schema for missing HTML elements — check for: aside, figure, figcaption, details, summary, mark, time, abbr, cite, code, pre, blockquote, hr
+- [x] Audit schema for missing HTML elements — check for: aside, figure, figcaption, details, summary, mark, time, abbr, cite, code, pre, blockquote, hr
 - [ ] Consider: should the schema be more permissive (allow arbitrary HTML tags via `custom` type)?
 
 ## Repo Cleanliness / Structure
