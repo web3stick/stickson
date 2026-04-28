@@ -33,6 +33,13 @@ function serve_file(res: http.ServerResponse, filePath: string): void {
 }
 
 export function run_serve(args: string[]) {
+  if (args.includes("-h") || args.includes("--help")) {
+    console.log(`Usage: stickson serve <file.json>
+  Build once and serve the result with a simple HTTP server (no live reload).
+  Example: stickson serve src/content.json`);
+    return;
+  }
+
   const filePath = args[0];
   if (!filePath) {
     console.error("Usage: stickson serve <file.json>");

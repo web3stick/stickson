@@ -79,9 +79,8 @@ Commands:
   create <name>     Scaffold a new project
   validate <file>   Validate JSON content file against schema
   build [options]   Build static pages from JSON
-  serve <file>      Serve a JSON file with live reload
+  serve <file>      Serve a JSON file (no live reload)
   dev <file>        Watch JSON changes and rebuild automatically
-  help              Show this help message
 
 Options for build:
   --single          Output single HTML file with inlined JS/CSS

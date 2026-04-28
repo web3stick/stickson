@@ -189,8 +189,6 @@ my-site/
 └── README.md
 ```
 
-The main entry file (`content.json`) defines routes to other JSON files. When you build, each route produces a corresponding HTML file:
-
 ## Common Element Types
 
 | Element                 | Description                      |

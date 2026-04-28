@@ -4,6 +4,13 @@ import { execSync } from "child_process";
 
 // ============================================================
 export function run_create(args: string[]) {
+  if (args.includes("-h") || args.includes("--help")) {
+    console.log(`Usage: stickson create <project-name>
+  Scaffold a new project directory with a minimal setup.
+  Example: stickson create my-site`);
+    process.exit(0);
+  }
+
   const projectName = args[0];
   if (!projectName) {
     console.error("Usage: stickson create <project-name>");

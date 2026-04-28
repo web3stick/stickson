@@ -21,11 +21,13 @@ never leave this empy should always be task here, with check boxes, rm complted 
 
 - [x] **Schema coverage gap - 17 missing HTML elements**: Added form, input, select, option, textarea, label, fieldset, legend, table, thead, tbody, tfoot, tr, td, th, colgroup, col to both the schema and template engine.
 
-- [ ] **Examples restructure**: Delete old example files, create clean `vanilla/` and `sleet-css/` example folders with minimal working content that demonstrates the core features.
+- [x] **Docs improvements**: Ensure docs/CLI.md, docs/INSTALL.md, docs/TUTORIAL.md are consistent with current CLI behavior. Added `-h`/`--help` support to all CLI commands. Fixed project structure in INSTALL.md (was missing `src/`). Fixed serve vs dev descriptions. Added `create --help` examples. Fixed TUTORIAL.md project structure. Fixed CLI.md examples section.
 
-- [ ] **Docs improvements**: Ensure docs/CLI.md, docs/INSTALL.md, docs/TUTORIAL.md are consistent with current CLI behavior. Add examples for routes, themes, and custom templates.
+- [x] **CLI help flag handling**: `stickson validate --help`, `stickson dev --help`, `stickson serve --help`, `stickson create --help` all silently failed (validate/dev tried to use `--help` as a file path, serve created a directory called `--help`). Fixed all four commands to properly detect `-h`/`--help` and print usage.
 
-- [ ] **Repo cleanliness**: Verify `npm pack --dry-run` produces correct package contents, ensure `.gitignore` is complete, check all published files are clean.
+- [x] **Repo cleanliness**: `.gitignore` updated to include `--help/` (accidentally created when `create --help` was run before the fix). Other files clean.
+
+- [ ] **Solidify spec for 0.0.2**: Review and lock down the JSON schema (schema/) — all element types fully covered, no ambiguity. Ensure the template engine behavior matches schema exactly. Confirm the published package surface area is minimal and correct.
 
 =====================
 <br/>

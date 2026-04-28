@@ -40,6 +40,13 @@ function inject_live_reload(html: string): string {
 
 // ============================================================
 export async function run_dev(args: string[]) {
+  if (args.includes("-h") || args.includes("--help")) {
+    console.log(`Usage: stickson dev <file.json>
+  Watch JSON file(s) for changes and rebuild automatically with a live-reload HTTP server.
+  Example: stickson dev src/content.json`);
+    return;
+  }
+
   const filePath = args[0];
   if (!filePath) {
     console.error("Usage: stickson dev <file.json>");

@@ -28,6 +28,12 @@ stickson create my-site
 | -------- | --------------------------------- |
 | `name`   | Project directory name (required) |
 
+**Options:**
+
+| Option         | Description                |
+| -------------- | -------------------------- |
+| `-h`, `--help` | Show help for this command |
+
 **Behavior:**
 
 - Creates `./<name>/` directory
@@ -53,6 +59,12 @@ stickson validate src/content.json
 | Argument | Description                               |
 | -------- | ----------------------------------------- |
 | `file`   | Path to a `.json` content file (required) |
+
+**Options:**
+
+| Option         | Description                |
+| -------------- | -------------------------- |
+| `-h`, `--help` | Show help for this command |
 
 **Output:**
 
@@ -109,6 +121,12 @@ stickson dev src/content.json
 | -------- | ------------------------------------------------ |
 | `file`   | Path to the main `.json` content file (required) |
 
+**Options:**
+
+| Option         | Description                |
+| -------------- | -------------------------- |
+| `-h`, `--help` | Show help for this command |
+
 **Behavior:**
 
 1. Parses routes from the JSON file to discover linked JSON files
@@ -139,6 +157,12 @@ stickson serve src/content.json
 | Argument | Description                               |
 | -------- | ----------------------------------------- |
 | `file`   | Path to a `.json` content file (required) |
+
+**Options:**
+
+| Option         | Description                |
+| -------------- | -------------------------- |
+| `-h`, `--help` | Show help for this command |
 
 **Behavior:**
 
@@ -216,7 +240,7 @@ Navigation links should point to the output HTML filenames:
 ```bash
 # Scaffold a new project
 stickson create my-site
-cd my-site && bun install
+cd my-site
 
 # Validate content
 stickson validate src/content.json
@@ -236,7 +260,7 @@ stickson build src/
 # Watch with live reload
 stickson dev src/content.json
 
-# Serve static build
+# Serve static build (no live reload)
 stickson serve src/content.json
 ```
 

@@ -2,6 +2,13 @@ import { validate_file } from "./json_validator.js";
 
 // ============================================================
 export function run_validate(args: string[]) {
+  if (args.includes("-h") || args.includes("--help")) {
+    console.log(`Usage: stickson validate <file.json>
+  Validate a JSON content file against the stickson schema.
+  Example: stickson validate src/content.json`);
+    process.exit(0);
+  }
+
   const filePath = args[0];
   if (!filePath) {
     console.error("Usage: stickson validate <file.json>");
