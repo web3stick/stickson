@@ -72,6 +72,15 @@ export function validate_content_json(json: object): validate_result {
 export function validate_file(filePath: string): validate_result {
   console.log(`====== Validating file: ${filePath} ======`);
   const raw = fs.readFileSync(filePath, "utf-8");
-  const json = JSON.parse(raw);
+  let json;
+  try {
+    json = JSON.parse(raw);
+  } catch (e: unknown) {
+    const message = e instanceof Error ? e.message : String(e);
+    return {
+      valid: false,
+      errors: [{ path: filePath, message: `Invalid JSON: ${message}` }],
+    };
+  }
   return validate_content_json(json);
 }

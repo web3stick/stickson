@@ -26,26 +26,61 @@ export function run_build(args: string[]) {
       inputFile = defaultPath;
     } else {
       console.error(
-        "Usage: stickson build [--single] [--out <dir>] [input.json]",
+        "Usage: stickson build [--single] [--out <dir>] [input.json|dir]",
       );
       console.error(
         "  --single    Output a single HTML file with inlined JS/CSS",
       );
       console.error("  --out <dir> Output directory (default: ./out)");
+      console.error("  If input is a directory, builds all .json files in it");
       process.exit(1);
     }
   }
 
-  console.log(`====== Building: ${inputFile} ======`);
-  const result = build_pages(inputFile, { single, outDir });
+  const resolvedInput = path.resolve(inputFile);
+  let inputFiles: string[] = [];
 
-  if (result.success) {
-    console.log(`====== Build complete: ${result.pages.join(", ")} ======`);
-  } else {
-    console.error("====== Build failed ======");
-    for (const err of result.errors) {
-      console.error(`  ${err}`);
+  if (!fs.existsSync(resolvedInput)) {
+    console.error(`Path does not exist: ${resolvedInput}`);
+    process.exit(1);
+  }
+
+  if (fs.statSync(resolvedInput).isDirectory()) {
+    // Collect all .json files in the directory
+    const entries = fs.readdirSync(resolvedInput, { withFileTypes: true });
+    inputFiles = entries
+      .filter((e) => e.isFile() && e.name.endsWith(".json"))
+      .map((e) => path.join(resolvedInput, e.name));
+
+    if (inputFiles.length === 0) {
+      console.error(`No .json files found in directory: ${resolvedInput}`);
+      process.exit(1);
     }
+    console.log(
+      `====== Building ${inputFiles.length} files from directory ======`,
+    );
+  } else {
+    inputFiles = [resolvedInput];
+  }
+
+  let allSuccess = true;
+
+  for (const file of inputFiles) {
+    console.log(`====== Building: ${file} ======`);
+    const result = build_pages(file, { single, outDir });
+
+    if (result.success) {
+      console.log(`====== Build complete: ${result.pages.join(", ")} ======`);
+    } else {
+      console.error("====== Build failed ======");
+      for (const err of result.errors) {
+        console.error(`  ${err}`);
+      }
+      allSuccess = false;
+    }
+  }
+
+  if (!allSuccess) {
     process.exit(1);
   }
 }

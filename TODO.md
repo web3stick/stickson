@@ -8,11 +8,11 @@
 
 ## CLI / UX Improvements
 
-- [ ] `build` should accept a directory and build all JSON files in it
+- [x] `build` should accept a directory and build all JSON files in it
 - [x] `serve` / `dev` should build automatically if `out/` is stale or missing
 - [x] `dev` should watch all linked JSON files (not just the entry file)
 - [x] `dev` should serve the output (run an HTTP server with live reload) — currently it's just a file watcher that logs rebuilds
-- [ ] Error messages should be user-friendly (no stack traces for invalid JSON, schema validation should list which field failed)
+- [x] Error messages should be user-friendly (no stack traces for invalid JSON, schema validation should list which field failed)
 
 ## Schema / Content Issues
 
