@@ -16,7 +16,8 @@
 
 ## Schema / Content Issues
 
-- [ ] Schema is missing `article` element — added but verify all common HTML elements are covered (section, aside, figure, figcaption, etc.)
+- [x] Schema is missing `article` element — added but verify all common HTML elements are covered (section, aside, figure, figcaption, etc.)
+- [ ] Verify all common HTML elements are covered — check schema for: section, aside, figure, figcaption, details, summary, mark, time, abbr, cite, code, pre, blockquote, hr
 - [ ] Consider: should the schema be more permissive (allow arbitrary HTML tags via `custom` type)?
 
 ## Docs / README
