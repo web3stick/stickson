@@ -1,0 +1,11 @@
+src/
+docs/
+examples/
+CHECKLIST.md
+TODO.md
+PROMPT.md
+.git/
+bun.lock
+*.log
+.DS_Store
+tsconfig.json
