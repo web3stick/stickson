@@ -1,11 +1,12 @@
 # CHECKLIST
 
-Run this every time before working on stickson. See `AGENTS.md` for full coding standards and workflow reference.
+See `AGENTS.md` for coding standards. See `PROMPT.md` for the project mission.
 
 ## Pre-work
 
 - [ ] `cd` to the project root
 - [ ] read ./TODO.md — note current phase and next incomplete task
+- [ ] read ./PROMPT.md — remember: this project should be continuously improved
 - [ ] read ./AGENTS.md — coding standards and workflow reference
 - [ ] review relevant docs/ files for current phase
 - [ ] check git status: `git status`
@@ -18,9 +19,9 @@ Run this every time before working on stickson. See `AGENTS.md` for full coding 
 - [ ] git push — push commits to origin
 - [ ] `git status` — confirm clean state
 
-## Cron job self-check
+## Continuous Improvement (per-session)
 
-- [ ] work on as many todo items as reasonable per run (don't artificially limit)
-- [ ] test each thing before marking done in todo
-- [ ] send Discord summary to #agent-chat after each run
-- [ ] update todo.md checkboxes after completing tasks
+- [ ] Actively look for bugs, UX issues, missing features, bad error messages
+- [ ] Prune TODO.md: remove old checked items that are no longer relevant, add newly discovered issues
+- [ ] If no specific task is in progress, pick one item from TODO and work on it
+- [ ] Send Discord summary to #agent-chat after each session

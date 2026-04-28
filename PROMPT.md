@@ -1,6 +1,17 @@
 # PROMPT
 
-json framework for making satic pages (stickson)
+json framework for making static pages (stickson)
+
+## Mission
+
+**Strive to improve this package and framework.** Every run should leave stickson better than it was found. Actively:
+- Find and fix bugs
+- Add missing features and quality-of-life improvements
+- Improve docs and error messages
+- Clean up and sharpen the TODO — remove old checked items, add newly discovered issues
+- Keep this project moving toward a solid v1.0
+
+## Original Spec
 essently i want a json file and a schema and then a js file to intert the conent into the html templte file, can use the same js and html file for all projects and users should have the ablity to use a custom css file, as well as we can provie some css themes to use.
 
 i would like cli tool where they can create new projects and the only files in their new projects should be the content json file and the package json file, then there should be cli commands to check their json file aagins the schema, build their app and output to out directory, and a command to serve, we could also have a dev command for live chages to the josn file
