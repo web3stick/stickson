@@ -165,8 +165,11 @@ function render_element(el: element_data): string {
       return `<blockquote${idAttr}${classAttr}${citeAttr}${attrsStr}><p>${escape_html(content)}</p></blockquote>`;
     }
 
+    case "article":
+      return `<${type}${idAttr}${classAttr}${attrsStr}>${render_element_array(content as element_data[])}</${type}>`;
+
     case "pre":
-      return `<pre${idAttr}${classAttr}${attrsStr}><code>${(el as any).content}</code></pre>`;
+      return `<pre${idAttr}${classAttr}${attrsStr}><code>${escape_html((el as any).content)}</code></pre>`;
 
     case "hr":
       return `<hr${idAttr}${classAttr}${attrsStr} />`;

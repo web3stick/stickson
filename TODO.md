@@ -1,5 +1,7 @@
 # TODO
 
+> **Note**: Fresh clone performed 2026-04-28. All examples need full verification on this clean environment before any new work.
+
 BIG FOCUS :: DO NOT TOUCH THIS SECTION
 
 - working examples
@@ -13,12 +15,15 @@ BIG FOCUS :: DO NOT TOUCH THIS SECTION
 
 never leave this empy should always be task here, with check boxes, rm complted tasks from prevouse run and leave only fresh uncomplted tasks here
 
-- [ ] **Fresh clone + example verification**: Clone to a clean directory (not existing repo), run `bun install && bun run build`, then test all examples (`bin/stickson.js dev examples/vanilla/src/content.json`, `bin/stickson.js dev examples/sleet-css/src/content.json`, `bin/stickson.js build`, `bin/stickson.js validate`). Must work out of the box on a fresh environment. User reports errors on their end that don't repro on dev machine.
-- [x] **Document CLI spec**: write a spec covering all CLI commands (`build`, `validate`, `dev`, `serve`, `create`), their flags, arguments, input/output behavior. This lives in `docs/CLI.md`. Also fixed stale `--out` default in `bin/stickson.js` help text (said `./out`, should be `./dist`).
-- [x] **Validate all CLI commands work**: `build`, `validate`, `dev`, `serve` for both vanilla and sleet-css examples. All confirmed working. `serve` and `dev` require a JSON file path (not an output directory).
-- [x] **Build output inspection**: verified built HTML files are correct and complete for both examples. vanilla outputs index.html, home.html, about.html. sleet-css outputs index.html. Content matches JSON input.
-- [x] **Fix examples/vanilla home.json**: removed the incorrect `routes` block from `home.json` (it was duplicating content from `content.json` and pointing to `src/home.json` instead of `src/about.json`). `home.json` is now a standalone route file without its own routes block.
-- [x] **Fix TUTORIAL.md project structure**: updated the project structure section to correctly describe how `content.json` acts as the main entry with routes, and how `home.json` and `about.json` are linked pages.
+- [ ] **Schema audit - missing `article` in template_engine**: The schema defines an `article` element type but the template engine has no `case "article":` handler, causing it to silently render as `<!-- unknown element type: article -->`. Also fixed: `pre` element content was not HTML-escaped (XSS risk). Fix template_engine.ts to handle `article` type, add schema coverage for missing form/input/table elements.
+
+- [ ] **Examples restructure**: Delete old example files, create clean `vanilla/` and `sleet-css/` example folders with minimal working content that demonstrates the core features.
+
+- [ ] **Schema coverage gap**: Missing form, input, select, textarea, table, thead, tbody, tr, td, th elements in both schema and template engine. Add these common HTML elements.
+
+- [ ] **Docs improvements**: Ensure docs/CLI.md, docs/INSTALL.md, docs/TUTORIAL.md are consistent with current CLI behavior. Add examples for routes, themes, and custom templates.
+
+- [ ] **Repo cleanliness**: Verify `npm pack --dry-run` produces correct package contents, ensure `.gitignore` is complete, check all published files are clean.
 
 =====================
 <br/>
