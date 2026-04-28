@@ -5,7 +5,7 @@
 Stickson (`@web3stick/stickson`) is a JSON framework for making static pages.
 - Package: https://www.npmjs.com/package/@web3stick/stickson
 - Repo: https://github.com/web3stick/stickson
-- This project uses **bun** as the primary runtime and package manager — prefer bun commands over npm/yarn/pnpm.
+- Runtime: **bun** — use bun commands over npm/yarn/pnpm
 
 ## Coding Standards
 
@@ -23,13 +23,11 @@ Stickson (`@web3stick/stickson`) is a JSON framework for making static pages.
 - console logs use `======` on both sides, same length as other logs in project
 - console log only for data fetching/data, NOT nav actions
 
-### Code Style
+### Build and Type Check
 
-- Use `bun` for all scripts, installs, and builds
-- Use `bun run` for package scripts
-- Prefer `bun bin/stickson.js` over `npx stickson` when running from source
-- Run `bun run tsc --noEmit` to check types
-- Run `bunx prettier . --write` to format
+- `bun run tsc --noEmit` — verify no type errors
+- `bunx prettier . --write` — format code
+- `bun run build` — compile TypeScript to `dist/`
 
 ### Tech Stack
 
@@ -41,13 +39,12 @@ Stickson (`@web3stick/stickson`) is a JSON framework for making static pages.
 
 ## Workflow
 
-### Before working on stickson
+### Before working on this project
 
-1. `cd /home/sleet-dev/SLEET_AI_WORKING_DIRECTORY/stickson`
-2. Read `TODO.md` — note current phase and next incomplete task
-3. Read `CHECKLIST.md` (this file)
-4. Review relevant `docs/` files for current phase
-5. Run `git status` to see current state
+1. Read `TODO.md` — note current phase and next incomplete task
+2. Read `CHECKLIST.md` — for per-session checklist
+3. Review relevant `docs/` files for current phase
+4. Run `git status` to see current state
 
 ### After coding
 
@@ -74,15 +71,3 @@ bun run build
 bun bin/stickson.js validate examples/home.json
 bun bin/stickson.js build examples/home.json --out /tmp/stickson-test-out
 ```
-
-## Cron Job (stickson bugs and improvements)
-
-Job ID: `99b5b084334e` — runs every 2 hours, delivers to Discord.
-
-Workflow per run:
-1. Pre-flight: `git status` and `npm pack --dry-run`
-2. Smoke test: `bun run build && bun bin/stickson.js validate examples/home.json && bun bin/stickson.js build examples/home.json --out /tmp/stickson-test-out`
-3. Find and fix one real bug or UX issue (use `systematic-debugging` skill)
-4. Commit + push any fixes
-5. Mark fixed items as done in `TODO.md`
-6. Send Discord summary to #agent-chat

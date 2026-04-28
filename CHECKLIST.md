@@ -4,7 +4,7 @@ Run this every time before working on stickson. See `AGENTS.md` for full coding 
 
 ## Pre-work
 
-- [ ] `cd /home/sleet-dev/SLEET_AI_WORKING_DIRECTORY/stickson`
+- [ ] `cd` to the project root
 - [ ] read ./TODO.md — note current phase and next incomplete task
 - [ ] read ./AGENTS.md — coding standards and workflow reference
 - [ ] review relevant docs/ files for current phase
