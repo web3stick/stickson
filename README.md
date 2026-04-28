@@ -1,118 +1,30 @@
 # stickson
 
-JSON framework for making static pages from JSON content files.
+JSON framework for making static pages
 
 ---
 
-## Install
-
-```sh
-bun install -g @web3stick/stickson
-```
-
-Or run from source without installing:
+### Dev and Build
 
 ```sh
 bun install
-bun bin/stickson.js --help
+bun run tsc --noEmit
+bunx prettier . --write
+# publish
+bun run build
+bun publish --dry-run
+bunx npm login
+bun publish --access public
 ```
 
 ---
 
-## Quick Start
+## Documentation
 
-Create a content file (`my-page.json`):
+- [Install Guide](docs/INSTALL.md) — install stickson and run your first build
+- [CSS Guide](docs/CSS_GUIDE.md) — targeting generated HTML elements with CSS
+- [LLM Guide](docs/LLM.md) — how stickson works for AI tooling
 
-```json
-{
-  "version": "1.0",
-  "meta": {
-    "title": "My Page",
-    "description": "Built with stickson"
-  },
-  "page": {
-    "head": [
-      { "type": "title", "content": "My Page" }
-    ],
-    "body": [
-      { "type": "h1", "content": "Hello, stickson!" },
-      { "type": "p", "content": "JSON in, HTML out." }
-    ]
-  }
-}
-```
-
-Build to static HTML:
-
-```sh
-stickson build my-page.json --out dist
-```
-
-Serve locally with hot reload:
-
-```sh
-stickson dev my-page.json
-```
-
-Validate a content file:
-
-```sh
-stickson validate my-page.json
-```
-
----
-
-## Commands
-
-### `stickson create <name>`
-
-Scaffold a new stickson project.
-
-### `stickson validate <file.json>`
-
-Validate a content file against the stickson schema.
-
-### `stickson build <file.json> --out <dir>`
-
-Build a content file to static HTML output.
-
-### `stickson serve <file.json>`
-
-Serve a content file locally (auto-builds if needed).
-
-### `stickson dev <file.json>`
-
-Serve with hot reload — rebuilds on file changes.
-
-### `stickson help`
-
-Show all available commands.
-
----
-
-## Project Structure
-
-```
-stickson/
-├── bin/stickson.js       CLI entry point
-├── dist/                 Compiled JS output
-├── schema/               JSON content schemas
-├── themes/               CSS themes
-└── examples/             Example content files
-```
-
----
-
-## Content JSON Schema
-
-Content files must conform to the schema in `schema/content-schema.json`. Validate with:
-
-```sh
-stickson validate examples/home.json
-```
-
----
-
-## License
-
-MIT — copyright 2026 web3stick.near
+=====================
+<br/>
+copyright 2026 by web3stick.near
