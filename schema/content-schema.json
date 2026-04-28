@@ -14,12 +14,27 @@
       "type": "object",
       "description": "Page metadata",
       "properties": {
-        "title": { "type": "string" },
-        "description": { "type": "string" },
-        "author": { "type": "string" },
-        "lang": { "type": "string", "default": "en" },
-        "favicon": { "type": "string", "format": "uri" },
-        "ogImage": { "type": "string", "format": "uri" }
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string",
+          "default": "en"
+        },
+        "favicon": {
+          "type": "string",
+          "format": "uri"
+        },
+        "ogImage": {
+          "type": "string",
+          "format": "uri"
+        }
       },
       "additionalProperties": false
     },
@@ -27,9 +42,15 @@
       "type": "object",
       "description": "Theme configuration",
       "properties": {
-        "name": { "type": "string" },
-        "cssFile": { "type": "string" },
-        "customCss": { "type": "string" }
+        "name": {
+          "type": "string"
+        },
+        "cssFile": {
+          "type": "string"
+        },
+        "customCss": {
+          "type": "string"
+        }
       },
       "additionalProperties": false
     },
@@ -37,9 +58,15 @@
       "type": "object",
       "description": "HTML template configuration",
       "properties": {
-        "file": { "type": "string" },
-        "headExtra": { "type": "string" },
-        "bodyExtra": { "type": "string" }
+        "file": {
+          "type": "string"
+        },
+        "headExtra": {
+          "type": "string"
+        },
+        "bodyExtra": {
+          "type": "string"
+        }
       },
       "additionalProperties": false
     },
@@ -62,12 +89,16 @@
         "head": {
           "type": "array",
           "description": "Head section elements",
-          "items": { "$ref": "#/definitions/element" }
+          "items": {
+            "$ref": "#/definitions/element"
+          }
         },
         "body": {
           "type": "array",
           "description": "Body section elements",
-          "items": { "$ref": "#/definitions/element" }
+          "items": {
+            "$ref": "#/definitions/element"
+          }
         }
       },
       "additionalProperties": false
@@ -76,44 +107,141 @@
   "definitions": {
     "element": {
       "oneOf": [
-        { "$ref": "#/definitions/section" },
-        { "$ref": "#/definitions/div" },
-        { "$ref": "#/definitions/p" },
-        { "$ref": "#/definitions/h1" },
-        { "$ref": "#/definitions/h2" },
-        { "$ref": "#/definitions/h3" },
-        { "$ref": "#/definitions/h4" },
-        { "$ref": "#/definitions/h5" },
-        { "$ref": "#/definitions/h6" },
-        { "$ref": "#/definitions/span" },
-        { "$ref": "#/definitions/a" },
-        { "$ref": "#/definitions/button" },
-        { "$ref": "#/definitions/img" },
-        { "$ref": "#/definitions/nav" },
-        { "$ref": "#/definitions/ul" },
-        { "$ref": "#/definitions/ol" },
-        { "$ref": "#/definitions/li" },
-        { "$ref": "#/definitions/header" },
-        { "$ref": "#/definitions/footer" },
-        { "$ref": "#/definitions/main" },
-        { "$ref": "#/definitions/article" },
-        { "$ref": "#/definitions/script" },
-        { "$ref": "#/definitions/style" },
-        { "$ref": "#/definitions/custom" }
+        {
+          "$ref": "#/definitions/section"
+        },
+        {
+          "$ref": "#/definitions/div"
+        },
+        {
+          "$ref": "#/definitions/p"
+        },
+        {
+          "$ref": "#/definitions/h1"
+        },
+        {
+          "$ref": "#/definitions/h2"
+        },
+        {
+          "$ref": "#/definitions/h3"
+        },
+        {
+          "$ref": "#/definitions/h4"
+        },
+        {
+          "$ref": "#/definitions/h5"
+        },
+        {
+          "$ref": "#/definitions/h6"
+        },
+        {
+          "$ref": "#/definitions/span"
+        },
+        {
+          "$ref": "#/definitions/a"
+        },
+        {
+          "$ref": "#/definitions/button"
+        },
+        {
+          "$ref": "#/definitions/img"
+        },
+        {
+          "$ref": "#/definitions/nav"
+        },
+        {
+          "$ref": "#/definitions/ul"
+        },
+        {
+          "$ref": "#/definitions/ol"
+        },
+        {
+          "$ref": "#/definitions/li"
+        },
+        {
+          "$ref": "#/definitions/header"
+        },
+        {
+          "$ref": "#/definitions/footer"
+        },
+        {
+          "$ref": "#/definitions/main"
+        },
+        {
+          "$ref": "#/definitions/article"
+        },
+        {
+          "$ref": "#/definitions/aside"
+        },
+        {
+          "$ref": "#/definitions/figure"
+        },
+        {
+          "$ref": "#/definitions/figcaption"
+        },
+        {
+          "$ref": "#/definitions/details"
+        },
+        {
+          "$ref": "#/definitions/summary"
+        },
+        {
+          "$ref": "#/definitions/mark"
+        },
+        {
+          "$ref": "#/definitions/time"
+        },
+        {
+          "$ref": "#/definitions/abbr"
+        },
+        {
+          "$ref": "#/definitions/cite"
+        },
+        {
+          "$ref": "#/definitions/code"
+        },
+        {
+          "$ref": "#/definitions/pre"
+        },
+        {
+          "$ref": "#/definitions/blockquote"
+        },
+        {
+          "$ref": "#/definitions/hr"
+        },
+        {
+          "$ref": "#/definitions/script"
+        },
+        {
+          "$ref": "#/definitions/style"
+        },
+        {
+          "$ref": "#/definitions/custom"
+        }
       ]
     },
     "section": {
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "section" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
+        "type": {
+          "const": "section"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
         "content": {
           "type": "array",
-          "items": { "$ref": "#/definitions/element" }
+          "items": {
+            "$ref": "#/definitions/element"
+          }
         },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -121,14 +249,24 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "div" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
+        "type": {
+          "const": "div"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
         "content": {
           "type": "array",
-          "items": { "$ref": "#/definitions/element" }
+          "items": {
+            "$ref": "#/definitions/element"
+          }
         },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -136,11 +274,21 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "p" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
-        "content": { "type": "string" },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "type": {
+          "const": "p"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -148,11 +296,21 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "h1" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
-        "content": { "type": "string" },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "type": {
+          "const": "h1"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -160,11 +318,21 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "h2" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
-        "content": { "type": "string" },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "type": {
+          "const": "h2"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -172,11 +340,21 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "h3" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
-        "content": { "type": "string" },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "type": {
+          "const": "h3"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -184,11 +362,21 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "h4" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
-        "content": { "type": "string" },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "type": {
+          "const": "h4"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -196,11 +384,21 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "h5" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
-        "content": { "type": "string" },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "type": {
+          "const": "h5"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -208,11 +406,21 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "h6" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
-        "content": { "type": "string" },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "type": {
+          "const": "h6"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -220,11 +428,21 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "span" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
-        "content": { "type": "string" },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "type": {
+          "const": "span"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -232,14 +450,30 @@
       "type": "object",
       "required": ["type", "content", "href"],
       "properties": {
-        "type": { "const": "a" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
-        "href": { "type": "string" },
-        "target": { "type": "string" },
-        "rel": { "type": "string" },
-        "content": { "type": "string" },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "type": {
+          "const": "a"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string"
+        },
+        "rel": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -247,12 +481,24 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "button" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
-        "onclick": { "type": "string" },
-        "content": { "type": "string" },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "type": {
+          "const": "button"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "onclick": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -260,14 +506,30 @@
       "type": "object",
       "required": ["type", "src"],
       "properties": {
-        "type": { "const": "img" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
-        "src": { "type": "string" },
-        "alt": { "type": "string" },
-        "width": { "type": ["number", "string"] },
-        "height": { "type": ["number", "string"] },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "type": {
+          "const": "img"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "src": {
+          "type": "string"
+        },
+        "alt": {
+          "type": "string"
+        },
+        "width": {
+          "type": ["number", "string"]
+        },
+        "height": {
+          "type": ["number", "string"]
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -275,14 +537,24 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "nav" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
+        "type": {
+          "const": "nav"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
         "content": {
           "type": "array",
-          "items": { "$ref": "#/definitions/element" }
+          "items": {
+            "$ref": "#/definitions/element"
+          }
         },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -290,14 +562,24 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "ul" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
+        "type": {
+          "const": "ul"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
         "content": {
           "type": "array",
-          "items": { "$ref": "#/definitions/li" }
+          "items": {
+            "$ref": "#/definitions/li"
+          }
         },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -305,14 +587,24 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "ol" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
+        "type": {
+          "const": "ol"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
         "content": {
           "type": "array",
-          "items": { "$ref": "#/definitions/li" }
+          "items": {
+            "$ref": "#/definitions/li"
+          }
         },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -320,13 +612,28 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "li" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
-        "content": {
-          "oneOf": [{ "type": "string" }, { "$ref": "#/definitions/a" }]
+        "type": {
+          "const": "li"
         },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/definitions/a"
+            }
+          ]
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -334,14 +641,24 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "header" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
+        "type": {
+          "const": "header"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
         "content": {
           "type": "array",
-          "items": { "$ref": "#/definitions/element" }
+          "items": {
+            "$ref": "#/definitions/element"
+          }
         },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -349,14 +666,24 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "footer" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
+        "type": {
+          "const": "footer"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
         "content": {
           "type": "array",
-          "items": { "$ref": "#/definitions/element" }
+          "items": {
+            "$ref": "#/definitions/element"
+          }
         },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -364,14 +691,24 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "article" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
+        "type": {
+          "const": "article"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
         "content": {
           "type": "array",
-          "items": { "$ref": "#/definitions/element" }
+          "items": {
+            "$ref": "#/definitions/element"
+          }
         },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -379,14 +716,24 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "main" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
+        "type": {
+          "const": "main"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
         "content": {
           "type": "array",
-          "items": { "$ref": "#/definitions/element" }
+          "items": {
+            "$ref": "#/definitions/element"
+          }
         },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -394,13 +741,27 @@
       "type": "object",
       "required": ["type", "src"],
       "properties": {
-        "type": { "const": "script" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
-        "src": { "type": "string" },
-        "async": { "type": "boolean" },
-        "defer": { "type": "boolean" },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "type": {
+          "const": "script"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "src": {
+          "type": "string"
+        },
+        "async": {
+          "type": "boolean"
+        },
+        "defer": {
+          "type": "boolean"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -408,11 +769,21 @@
       "type": "object",
       "required": ["type", "content"],
       "properties": {
-        "type": { "const": "style" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
-        "content": { "type": "string" },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "type": {
+          "const": "style"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -420,17 +791,35 @@
       "type": "object",
       "required": ["type", "tag", "content"],
       "properties": {
-        "type": { "const": "custom" },
-        "tag": { "type": "string", "pattern": "^[a-zA-Z][a-zA-Z0-9-]*$" },
-        "id": { "type": "string" },
-        "class": { "type": "string" },
+        "type": {
+          "const": "custom"
+        },
+        "tag": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9-]*$"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
         "content": {
           "oneOf": [
-            { "type": "string" },
-            { "type": "array", "items": { "$ref": "#/definitions/element" } }
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/element"
+              }
+            }
           ]
         },
-        "attrs": { "$ref": "#/definitions/attrs" }
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
       },
       "additionalProperties": false
     },
@@ -440,10 +829,317 @@
       "patternProperties": {
         "^[a-zA-Z-]+$": {
           "oneOf": [
-            { "type": "string" },
-            { "type": "number" },
-            { "type": "boolean" }
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "boolean"
+            }
           ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "aside": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "aside"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/element"
+          }
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "figure": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "figure"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/element"
+          }
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "figcaption": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "figcaption"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "details": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "details"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/element"
+          }
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "summary"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "mark": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "mark"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "time": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "time"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "datetime": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "abbr": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "abbr"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "cite": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "cite"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "code": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "code"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "pre": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "pre"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "blockquote": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "blockquote"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "cite": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "hr": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "const": "hr"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
         }
       },
       "additionalProperties": false

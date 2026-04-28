@@ -100,6 +100,11 @@ function render_element(el: element_data): string {
     case "h5":
     case "h6":
     case "span":
+    case "figcaption":
+    case "summary":
+    case "mark":
+    case "cite":
+    case "code":
       return `<${type}${idAttr}${classAttr}${attrsStr}>${escape_html(content)}</${type}>`;
 
     case "a":
@@ -123,6 +128,9 @@ function render_element(el: element_data): string {
     case "header":
     case "footer":
     case "main":
+    case "aside":
+    case "figure":
+    case "details":
       return `<${type}${idAttr}${classAttr}${attrsStr}>${render_element_array(content as element_data[])}</${type}>`;
 
     case "ul":
@@ -139,6 +147,29 @@ function render_element(el: element_data): string {
 
     case "custom":
       return `<${tag}${idAttr}${classAttr}${attrsStr}>${render_element_content(content)}</${tag}>`;
+
+    case "time": {
+      const datetime = (el as any).datetime;
+      const datetimeAttr = datetime
+        ? ` datetime="${escape_html(datetime)}"`
+        : "";
+      return `<time${idAttr}${classAttr}${datetimeAttr}${attrsStr}>${escape_html(content)}</time>`;
+    }
+
+    case "abbr":
+      return `<abbr${idAttr}${classAttr} title="${escape_html((el as any).title)}"${attrsStr}>${escape_html(content)}</abbr>`;
+
+    case "blockquote": {
+      const cite = (el as any).cite;
+      const citeAttr = cite ? ` cite="${escape_html(cite)}"` : "";
+      return `<blockquote${idAttr}${classAttr}${citeAttr}${attrsStr}><p>${escape_html(content)}</p></blockquote>`;
+    }
+
+    case "pre":
+      return `<pre${idAttr}${classAttr}${attrsStr}><code>${(el as any).content}</code></pre>`;
+
+    case "hr":
+      return `<hr${idAttr}${classAttr}${attrsStr} />`;
 
     default:
       return `<!-- unknown element type: ${escape_html(type)} -->`;

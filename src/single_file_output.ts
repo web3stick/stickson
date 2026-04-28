@@ -64,7 +64,7 @@ const DEFAULT_TEMPLATE = `<!DOCTYPE html>
           return '<a' + idAttr + classAttr + ' href="' + href + '"' + attrsStr + '>' + content + '</a>';
         case 'img':
           return '<img' + idAttr + classAttr + ' src="' + src + '"' + (alt ? ' alt="' + alt + '"' : '') + attrsStr + ' />';
-        case 'div': case 'section': case 'nav': case 'header': case 'footer': case 'main':
+        case 'div': case 'section': case 'nav': case 'header': case 'footer': case 'main': case 'aside': case 'figure': case 'details':
           return '<' + type + idAttr + classAttr + attrsStr + '>' + (Array.isArray(content) ? content.map(render).join('') : '') + '</' + type + '>';
         case 'ul': case 'ol':
           return '<' + type + idAttr + classAttr + attrsStr + '>' + (Array.isArray(content) ? content.map(render).join('') : '') + '</' + type + '>';
@@ -72,6 +72,18 @@ const DEFAULT_TEMPLATE = `<!DOCTYPE html>
           return '<li' + idAttr + classAttr + attrsStr + '>' + (typeof content === 'object' ? render(content) : content) + '</li>';
         case 'button':
           return '<button' + idAttr + classAttr + attrsStr + '>' + content + '</button>';
+        case 'p': case 'h1': case 'h2': case 'h3': case 'h4': case 'h5': case 'h6': case 'span': case 'figcaption': case 'summary': case 'mark': case 'cite': case 'code':
+          return '<' + type + idAttr + classAttr + attrsStr + '>' + (typeof content === 'string' ? content : '') + '</' + type + '>';
+        case 'time':
+          return '<time' + idAttr + classAttr + (el.datetime ? ' datetime="' + el.datetime + '"' : '') + attrsStr + '>' + content + '</time>';
+        case 'abbr':
+          return '<abbr' + idAttr + classAttr + ' title="' + (el.title || '') + '"' + attrsStr + '>' + content + '</abbr>';
+        case 'blockquote':
+          return '<blockquote' + idAttr + classAttr + (el.cite ? ' cite="' + el.cite + '"' : '') + attrsStr + '><p>' + content + '</p></blockquote>';
+        case 'pre':
+          return '<pre' + idAttr + classAttr + attrsStr + '><code>' + (typeof content === 'string' ? content : '') + '</code></pre>';
+        case 'hr':
+          return '<hr' + idAttr + classAttr + attrsStr + ' />';
         case 'custom':
           return '<' + tag + idAttr + classAttr + attrsStr + '>' + (typeof content === 'string' ? content : (Array.isArray(content) ? content.map(render).join('') : '')) + '</' + tag + '>';
         default:
