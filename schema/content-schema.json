@@ -217,6 +217,57 @@
         },
         {
           "$ref": "#/definitions/custom"
+        },
+        {
+          "$ref": "#/definitions/form"
+        },
+        {
+          "$ref": "#/definitions/input"
+        },
+        {
+          "$ref": "#/definitions/select"
+        },
+        {
+          "$ref": "#/definitions/option"
+        },
+        {
+          "$ref": "#/definitions/textarea"
+        },
+        {
+          "$ref": "#/definitions/table"
+        },
+        {
+          "$ref": "#/definitions/thead"
+        },
+        {
+          "$ref": "#/definitions/tbody"
+        },
+        {
+          "$ref": "#/definitions/tfoot"
+        },
+        {
+          "$ref": "#/definitions/tr"
+        },
+        {
+          "$ref": "#/definitions/td"
+        },
+        {
+          "$ref": "#/definitions/th"
+        },
+        {
+          "$ref": "#/definitions/colgroup"
+        },
+        {
+          "$ref": "#/definitions/col"
+        },
+        {
+          "$ref": "#/definitions/label"
+        },
+        {
+          "$ref": "#/definitions/fieldset"
+        },
+        {
+          "$ref": "#/definitions/legend"
         }
       ]
     },
@@ -1137,6 +1188,464 @@
         },
         "class": {
           "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "form": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "form"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/element"
+          }
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "input": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "const": "input"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "placeholder": {
+          "type": "string"
+        },
+        "type_attr": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "select": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "select"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/element"
+          }
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "option": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "option"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "selected": {
+          "type": "boolean"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "textarea": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "const": "textarea"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "placeholder": {
+          "type": "string"
+        },
+        "rows": {
+          "type": "number"
+        },
+        "cols": {
+          "type": "number"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "label": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "label"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "for": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "fieldset": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "fieldset"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/element"
+          }
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "legend": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "legend"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "table": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "table"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/element"
+          }
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "thead": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "thead"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/element"
+          }
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "tbody": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "tbody"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/element"
+          }
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "tfoot": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "tfoot"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/element"
+          }
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "tr": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "tr"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/element"
+          }
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "td": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "td"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "colspan": {
+          "type": "number"
+        },
+        "rowspan": {
+          "type": "number"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "th": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "th"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "colspan": {
+          "type": "number"
+        },
+        "rowspan": {
+          "type": "number"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "colgroup": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "const": "colgroup"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/element"
+          }
+        },
+        "attrs": {
+          "$ref": "#/definitions/attrs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "col": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "const": "col"
+        },
+        "id": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "span": {
+          "type": "number"
         },
         "attrs": {
           "$ref": "#/definitions/attrs"

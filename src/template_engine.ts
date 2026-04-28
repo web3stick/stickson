@@ -174,6 +174,128 @@ function render_element(el: element_data): string {
     case "hr":
       return `<hr${idAttr}${classAttr}${attrsStr} />`;
 
+    case "form": {
+      const action = (el as any).action;
+      const method = (el as any).method;
+      const formAttrs =
+        attrsStr +
+        (action ? ` action="${escape_html(action)}"` : "") +
+        (method ? ` method="${escape_html(method)}"` : "");
+      return `<form${idAttr}${classAttr}${formAttrs}>${render_element_array(content as element_data[])}</form>`;
+    }
+
+    case "input": {
+      const name = (el as any).name;
+      const value = (el as any).value;
+      const placeholder = (el as any).placeholder;
+      const typeAttr = (el as any).type_attr || "text";
+      const inputAttrs =
+        attrsStr +
+        ` type="${escape_html(typeAttr)}"` +
+        (name ? ` name="${escape_html(name)}"` : "") +
+        (value ? ` value="${escape_html(value)}"` : "") +
+        (placeholder ? ` placeholder="${escape_html(placeholder)}"` : "");
+      return `<input${idAttr}${classAttr}${inputAttrs} />`;
+    }
+
+    case "select": {
+      const selectName = (el as any).name;
+      const selectAttrs =
+        attrsStr + (selectName ? ` name="${escape_html(selectName)}"` : "");
+      return `<select${idAttr}${classAttr}${selectAttrs}>${render_element_array(content as element_data[])}</select>`;
+    }
+
+    case "option": {
+      const optValue = (el as any).value;
+      const optSelected = (el as any).selected;
+      const optAttrs =
+        attrsStr +
+        (optValue ? ` value="${escape_html(optValue)}"` : "") +
+        (optSelected ? ` selected=""` : "");
+      return `<option${idAttr}${classAttr}${optAttrs}>${escape_html(content)}</option>`;
+    }
+
+    case "textarea": {
+      const taName = (el as any).name;
+      const taPlaceholder = (el as any).placeholder;
+      const taRows = (el as any).rows;
+      const taCols = (el as any).cols;
+      const taAttrs =
+        attrsStr +
+        (taName ? ` name="${escape_html(taName)}"` : "") +
+        (taPlaceholder ? ` placeholder="${escape_html(taPlaceholder)}"` : "") +
+        (taRows ? ` rows="${taRows}"` : "") +
+        (taCols ? ` cols="${taCols}"` : "");
+      return `<textarea${idAttr}${classAttr}${taAttrs}>${escape_html(content)}</textarea>`;
+    }
+
+    case "label": {
+      const labelFor = (el as any).for;
+      const labelAttrs =
+        attrsStr + (labelFor ? ` for="${escape_html(labelFor)}"` : "");
+      return `<label${idAttr}${classAttr}${labelAttrs}>${escape_html(content)}</label>`;
+    }
+
+    case "fieldset": {
+      return `<fieldset${idAttr}${classAttr}${attrsStr}>${render_element_array(content as element_data[])}</fieldset>`;
+    }
+
+    case "legend": {
+      return `<legend${idAttr}${classAttr}${attrsStr}>${escape_html(content)}</legend>`;
+    }
+
+    case "table": {
+      return `<table${idAttr}${classAttr}${attrsStr}>${render_element_array(content as element_data[])}</table>`;
+    }
+
+    case "thead": {
+      return `<thead${idAttr}${classAttr}${attrsStr}>${render_element_array(content as element_data[])}</thead>`;
+    }
+
+    case "tbody": {
+      return `<tbody${idAttr}${classAttr}${attrsStr}>${render_element_array(content as element_data[])}</tbody>`;
+    }
+
+    case "tfoot": {
+      return `<tfoot${idAttr}${classAttr}${attrsStr}>${render_element_array(content as element_data[])}</tfoot>`;
+    }
+
+    case "tr": {
+      return `<tr${idAttr}${classAttr}${attrsStr}>${render_element_array(content as element_data[])}</tr>`;
+    }
+
+    case "td": {
+      const tdColspan = (el as any).colspan;
+      const tdRowspan = (el as any).rowspan;
+      const tdAttrs =
+        attrsStr +
+        (tdColspan ? ` colspan="${tdColspan}"` : "") +
+        (tdRowspan ? ` rowspan="${tdRowspan}"` : "");
+      return `<td${idAttr}${classAttr}${tdAttrs}>${escape_html(content)}</td>`;
+    }
+
+    case "th": {
+      const thColspan = (el as any).colspan;
+      const thRowspan = (el as any).rowspan;
+      const thScope = (el as any).scope;
+      const thAttrs =
+        attrsStr +
+        (thColspan ? ` colspan="${thColspan}"` : "") +
+        (thRowspan ? ` rowspan="${thRowspan}"` : "") +
+        (thScope ? ` scope="${escape_html(thScope)}"` : "");
+      return `<th${idAttr}${classAttr}${thAttrs}>${escape_html(content)}</th>`;
+    }
+
+    case "colgroup": {
+      return `<colgroup${idAttr}${classAttr}${attrsStr}>${render_element_array(content as element_data[])}</colgroup>`;
+    }
+
+    case "col": {
+      const colSpan = (el as any).span;
+      const colAttrs = attrsStr + (colSpan ? ` span="${colSpan}"` : "");
+      return `<col${idAttr}${classAttr}${colAttrs} />`;
+    }
+
     default:
       return `<!-- unknown element type: ${escape_html(type)} -->`;
   }
