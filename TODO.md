@@ -34,7 +34,7 @@
 
 - [ ] `npm pack --dry-run` after any change to `package.json`, `files` field, or `.npmignore`
 - [x] Add `prepublishOnly` script to `package.json` that runs `bun run build` automatically before publish
-- [ ] Type-check and lint: `bun run tsc --noEmit` and `bunx prettier . --write` should pass clean
+- [x] Type-check and lint: `bun run tsc --noEmit` and `bunx prettier . --write` should pass clean
 
 ## Docs / README
 
