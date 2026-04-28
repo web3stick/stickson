@@ -14,6 +14,16 @@
 - [x] `dev` should serve the output (run an HTTP server with live reload) — currently it's just a file watcher that logs rebuilds
 - [x] Error messages should be user-friendly (no stack traces for invalid JSON, schema validation should list which field failed)
 
+## Project Structure / Examples
+
+- [ ] Delete current `examples/` files (home.json, about.json, blog.json + out/) — they are one multi-page site that needs replacing
+- [x] New example creation flow via CLI: `stickson create my-site` scaffolds `src/content.json`, `package.json`, `README.md` with deps
+- [ ] Create example sites in `examples/` using different CSS approaches:
+  - `examples/vanilla/` — plain HTML, no framework
+  - `examples/sleet-css/` — uses a sleet-css theme (colorsnake-css, huggies-css, sticky-css, etc.)
+  - Each example: self-contained folder with `src/`, `package.json`, `README.md`
+- [ ] Future: support `bun create stickson@latest` style entry point as an alternative to `stickson create my-site`
+
 ## Schema / Content Issues
 
 - [x] Schema is missing `article` element — added but verify all common HTML elements are covered (section, aside, figure, figcaption, etc.)
@@ -22,8 +32,9 @@
 
 ## Repo Cleanliness / Structure
 
-- [ ] Re-verify with `npm pack --dry-run` after any change to `package.json`, `files` field, or `.npmignore`
+- [ ] `npm pack --dry-run` after any change to `package.json`, `files` field, or `.npmignore`
 - [ ] Add `prepublishOnly` script to `package.json` that runs `bun run build` automatically before publish
+- [ ] Type-check and lint: `bun run tsc --noEmit` and `bunx prettier . --write` should pass clean
 
 ## Docs / README
 

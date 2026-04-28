@@ -75,9 +75,7 @@ export async function run_dev(args: string[]) {
     const mod = await import("./index.js");
     const result = mod.build_pages(jsonFile, { outDir });
     if (result.success) {
-      console.log(
-        `====== Built ${result.pages.length} pages ======`,
-      );
+      console.log(`====== Built ${result.pages.length} pages ======`);
     } else {
       console.error("====== Build failed ======");
       for (const err of result.errors) {

@@ -1,0 +1,122 @@
+{
+  "version": "1.0",
+  "meta": {
+    "title": "My Stickson Site (Minimal Theme)",
+    "description": "A static site built with stickson using the minimal theme",
+    "author": "Developer",
+    "lang": "en"
+  },
+  "theme": {
+    "name": "minimal",
+    "cssFile": "node_modules/@web3stick/stickson/themes/minimal/theme.css"
+  },
+  "page": {
+    "head": [
+      {
+        "type": "style",
+        "content": ".hero { text-align: center; padding: 2rem 0; } .hero h1 { margin-top: 0; } .tagline { font-size: 1.25rem; color: #666; } .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; } .feature-card { background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid #eee; } .feature-card h3 { margin-top: 0; }"
+      }
+    ],
+    "body": [
+      {
+        "type": "header",
+        "content": [
+          { "type": "h1", "content": "My Stickson Site" },
+          {
+            "type": "nav",
+            "content": [
+              { "type": "a", "href": "#", "content": "Home" },
+              { "type": "a", "href": "#features", "content": "Features" },
+              { "type": "a", "href": "#about", "content": "About" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "main",
+        "content": [
+          {
+            "type": "section",
+            "class": "hero",
+            "content": [
+              { "type": "h1", "content": "Welcome to Stickson" },
+              {
+                "type": "p",
+                "class": "tagline",
+                "content": "JSON framework for making beautiful static pages"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "id": "features",
+            "content": [
+              { "type": "h2", "content": "Features" },
+              {
+                "type": "div",
+                "class": "feature-grid",
+                "content": [
+                  {
+                    "type": "div",
+                    "class": "feature-card",
+                    "content": [
+                      { "type": "h3", "content": "Simple JSON" },
+                      {
+                        "type": "p",
+                        "content": "Write your content in JSON. No complex syntax to learn."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "div",
+                    "class": "feature-card",
+                    "content": [
+                      { "type": "h3", "content": "Theming" },
+                      {
+                        "type": "p",
+                        "content": "Use built-in themes or bring your own CSS."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "div",
+                    "class": "feature-card",
+                    "content": [
+                      { "type": "h3", "content": "Fast Build" },
+                      {
+                        "type": "p",
+                        "content": "Static HTML output. Host anywhere — no server required."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "id": "about",
+            "content": [
+              { "type": "h2", "content": "About" },
+              {
+                "type": "p",
+                "content": "This site was built with stickson and the minimal theme. Edit the JSON to update content — styles come from the theme."
+              },
+              {
+                "type": "button",
+                "content": "Learn More",
+                "onclick": "alert('Thanks for exploring stickson!')"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "footer",
+        "content": [
+          { "type": "p", "content": "Built with stickson — minimal theme" }
+        ]
+      }
+    ]
+  }
+}

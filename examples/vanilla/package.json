@@ -1,0 +1,14 @@
+{
+  "name": "stickson-vanilla-example",
+  "version": "1.0.0",
+  "description": "Vanilla CSS example site built with stickson",
+  "private": true,
+  "scripts": {
+    "build": "stickson build src/content.json --out dist",
+    "dev": "stickson dev src/content.json",
+    "validate": "stickson validate src/content.json"
+  },
+  "devDependencies": {
+    "@web3stick/stickson": "file:../../.."
+  }
+}

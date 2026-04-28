@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
+import { execSync } from "child_process";
 
 // ============================================================
 export function run_create(args: string[]) {
@@ -19,6 +20,10 @@ export function run_create(args: string[]) {
   console.log(`====== Creating project: ${projectName} ======`);
 
   fs.mkdirSync(projectPath, { recursive: true });
+
+  // ---- src/ directory and content.json ----
+  const srcPath = path.join(projectPath, "src");
+  fs.mkdirSync(srcPath, { recursive: true });
 
   const contentJson = {
     version: "1.0",
@@ -66,42 +71,56 @@ export function run_create(args: string[]) {
     },
   };
 
+  // ---- schema/ directory ----
+  const schemaPath = path.join(projectPath, "schema");
+  fs.mkdirSync(schemaPath, { recursive: true });
+
+  // ---- package.json ----
   const pkgJson = {
     name: projectName,
     version: "0.1.0",
     private: true,
     scripts: {
       build: "stickson build",
-      dev: "stickson dev content.json",
-      validate: "stickson validate content.json",
+      dev: "stickson dev src/content.json",
+      validate: "stickson validate src/content.json",
+    },
+    dependencies: {
+      "@web3stick/stickson": "latest",
     },
     stickson: {
-      input: "content.json",
+      input: "src/content.json",
     },
   };
 
-  const schemaPath = path.join(projectPath, "schema");
-  fs.mkdirSync(schemaPath, { recursive: true });
-
+  // ---- README.md ----
   const readmeContent = `# ${projectName}
 
 A static site built with [stickson](https://github.com/sleet-ai/stickson).
 
+## Getting Started
+
+\`\`\`bash
+bun install
+bun run dev
+\`\`\`
+
 ## Commands
 
 \`\`\`bash
-npm run build    # Build the site
-npm run dev      # Watch for changes
-npm run validate # Validate content.json
+bun run build    # Build the site
+bun run dev      # Watch for changes with live reload
+bun run validate # Validate src/content.json
 \`\`\`
 
 ## Editing Content
 
-Edit \`content.json\` to change your site's content.
+Edit \`src/content.json\` to change your site's content.
 `;
 
+  // ---- Write files ----
   fs.writeFileSync(
-    path.join(projectPath, "content.json"),
+    path.join(srcPath, "content.json"),
     JSON.stringify(contentJson, null, 2),
   );
   fs.writeFileSync(
@@ -110,7 +129,15 @@ Edit \`content.json\` to change your site's content.
   );
   fs.writeFileSync(path.join(projectPath, "README.md"), readmeContent);
 
+  // ---- Install dependencies ----
+  console.log("====== Installing dependencies ======");
+  try {
+    execSync("bun install", { cwd: projectPath, stdio: "inherit" });
+  } catch {
+    console.error("Warning: bun install failed, run it manually");
+  }
+
   console.log("====== Project created ======");
   console.log(`  cd ${projectName}`);
-  console.log(`  npm install && npm run dev`);
+  console.log(`  bun run dev`);
 }

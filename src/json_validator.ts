@@ -48,7 +48,7 @@ export function validate_content_json(json: object): validate_result {
       message = `missing required field: '${paramKey}'`;
     } else if (err.keyword === "type") {
       const expected = err.params?.type || "";
-      const received = typeof (err.data);
+      const received = typeof err.data;
       message = `expected ${expected}, got ${received}`;
     } else if (err.keyword === "enum") {
       const allowed = err.params?.allowedValues?.join(", ");

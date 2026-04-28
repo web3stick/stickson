@@ -3,6 +3,7 @@
 ## Project Overview
 
 Stickson (`@web3stick/stickson`) is a JSON framework for making static pages.
+
 - Package: https://www.npmjs.com/package/@web3stick/stickson
 - Repo: https://github.com/web3stick/stickson
 - Runtime: **bun** — use bun commands over npm/yarn/pnpm

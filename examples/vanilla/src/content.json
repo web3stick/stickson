@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "meta": {
+    "title": "My Vanilla Stickson Site",
+    "description": "A simple static site built with stickson and plain CSS",
+    "author": "Developer",
+    "lang": "en"
+  },
+  "page": {
+    "head": [
+      {
+        "type": "style",
+        "content": "body { font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 2rem; line-height: 1.6; background: #fafafa; color: #333; }\nh1, h2, h3 { color: #222; line-height: 1.2; }\nh1 { font-size: 2.5rem; margin-bottom: 0.5rem; }\nh2 { font-size: 1.75rem; margin-top: 2rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }\nheader { border-bottom: 1px solid #eee; padding-bottom: 1rem; margin-bottom: 2rem; }\nnav a { margin-right: 1rem; color: #0066cc; text-decoration: none; }\nnav a:hover { text-decoration: underline; }\n.button { display: inline-block; padding: 0.75rem 1.5rem; background: #0066cc; color: white; border-radius: 4px; text-decoration: none; margin-top: 1rem; }\n.button:hover { background: #0055aa; }\nul { padding-left: 1.5rem; }\nli { margin: 0.5rem 0; }\nfooter { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #eee; color: #888; font-size: 0.9rem; }"
+      }
+    ],
+    "body": [
+      {
+        "type": "header",
+        "content": [
+          { "type": "h1", "content": "My Vanilla Site" },
+          {
+            "type": "nav",
+            "content": [
+              { "type": "a", "href": "#", "content": "Home" },
+              { "type": "a", "href": "#about", "content": "About" },
+              { "type": "a", "href": "#features", "content": "Features" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "main",
+        "content": [
+          {
+            "type": "section",
+            "id": "about",
+            "content": [
+              { "type": "h2", "content": "About" },
+              {
+                "type": "p",
+                "content": "This is a simple static site built with the stickson JSON framework. No CSS frameworks — just plain, custom styles you can modify as you like."
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "id": "features",
+            "content": [
+              { "type": "h2", "content": "Features" },
+              {
+                "type": "ul",
+                "content": [
+                  {
+                    "type": "li",
+                    "content": "Plain vanilla CSS — full control, no dependencies"
+                  },
+                  {
+                    "type": "li",
+                    "content": "Simple JSON-based content structure"
+                  },
+                  { "type": "li", "content": "Fast static HTML output" },
+                  { "type": "li", "content": "Easy to customize" }
+                ]
+              },
+              {
+                "type": "button",
+                "class": "button",
+                "content": "Get Started",
+                "onclick": "alert('Welcome to stickson!')"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "footer",
+        "content": [
+          {
+            "type": "p",
+            "content": "Built with stickson — vanilla CSS edition"
+          }
+        ]
+      }
+    ]
+  }
+}

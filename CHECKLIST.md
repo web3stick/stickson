@@ -5,6 +5,7 @@ See `AGENTS.md` for coding standards. See `PROMPT.md` for the project mission.
 ## Pre-work
 
 - [ ] `cd` to the project root
+- [ ] `git pull` — sync with origin before starting any work
 - [ ] read ./TODO.md — note current phase and next incomplete task
 - [ ] read ./PROMPT.md — remember: this project should be continuously improved
 - [ ] read ./AGENTS.md — coding standards and workflow reference

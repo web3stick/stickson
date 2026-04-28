@@ -1,0 +1,14 @@
+{
+  "name": "stickson-sleet-css-example",
+  "version": "1.0.0",
+  "description": "Stickson site using the minimal theme",
+  "private": true,
+  "scripts": {
+    "build": "stickson build src/content.json --out dist",
+    "dev": "stickson dev src/content.json",
+    "validate": "stickson validate src/content.json"
+  },
+  "devDependencies": {
+    "@web3stick/stickson": "file:../../.."
+  }
+}
