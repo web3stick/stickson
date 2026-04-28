@@ -1,54 +1,37 @@
 # TODO
 
-## Phase 1 — Package scaffolding
+## Bugs / Breaking Issues
 
-- [x] design package.json (name, bin entry, deps, scripts)
-- [x] create src/ folder structure: one function per file, clean snake_case names
-- [x] create bin/ folder with cli entry point
-- [x] create schema/ folder with JSON schema for content files
-- [x] add console.log ===...=== logging (data fetching and data only, not nav actions)
-- [x] run `bun run tsc --noEmit` and `bunx prettier . --write` after each phase
-- [x] create docs/ folder: INSTALL.md (human), LLM.md (AI), CSS_GUIDE.md (how to write CSS)
+- [ ] `dev` command crashes on startup — uses `require()` but package.json is `"type": "module"` (ESM). Should use `import()` dynamic import instead.
+- [ ] `serve` does not build — it requires `out/` folder to exist with pre-built HTML. Does not build on the fly. User must run `build` first.
+- [ ] `dev` only watches the entry JSON file — doesn't watch linked JSONs (about.json, blog.json). Only re-builds when the entry file changes.
 
-## Phase 2 — Core library (src/)
+## CLI / UX Improvements
 
-- [x] json_validator.ts — validate content JSON against schema
-- [x] template_engine.ts — insert content into HTML template
-- [x] css_themer.ts — inject/select CSS theme
-- [x] route_resolver.ts — parse routes from main.json, resolve linked JSON files
-- [x] page_builder.ts — orchestrate build: validate → resolve → generate HTML/JS
-- [x] single_file_output.ts — inline JS and content into single HTML file (default)
-- [x] index.ts — re-export all public functions for programmatic use
+- [ ] `build` should accept a directory and build all JSON files in it
+- [ ] `serve` / `dev` should build automatically if `out/` is stale or missing
+- [ ] `dev` should watch all linked JSON files (not just the entry file)
+- [ ] `dev` should serve the output (run an HTTP server with live reload) — currently it's just a file watcher that logs rebuilds
+- [ ] Error messages should be user-friendly (no stack traces for invalid JSON, schema validation should list which field failed)
 
-## Phase 3 — CLI (bin/)
+## Schema / Content Issues
 
-- [x] stickson create <project-name> — scaffold project (only content.json + package.json)
-- [x] stickson validate <file.json> — check JSON against schema
-- [x] stickson build [--single] — build to out/ directory
-- [x] stickson serve <file.json> — serve with live reload
-- [x] stickson dev <file.json> — watch JSON changes, rebuild automatically
+- [ ] Schema is missing `article` element — added but verify all common HTML elements are covered (section, aside, figure, figcaption, etc.)
+- [ ] Consider: should the schema be more permissive (allow arbitrary HTML tags via `custom` type)?
 
-## Phase 4 — Example content (examples/)
+## Docs / README
 
-- [x] create examples/ folder
-- [x] create example JSON files (home.json, about.json, blog.json) with varied content
-- [x] create a demo HTML template used by examples
+- [ ] `examples/README.md` and `bin/README.md` created — verify they're accurate
+- [ ] Main README should document the full CLI usage (all commands and flags)
+- [ ] `docs/INSTALL.md` — verify accuracy after recent changes
 
-## Phase 5 — Demo CSS themes (themes/)
+## Nice to Have
 
-- [x] create themes/ folder with 2+ complete CSS themes (e.g. minimal, dark)
-- [x] each theme: theme.css + preview screenshot/description
-- [x] themes should be usable via --theme flag or in content.json
-
-## Phase 6 — Docs
-
-- [x] docs/INSTALL.md — install via bun/npm, quick start guide
-- [x] docs/LLM.md — full prompt/context for AI agents to generate pages
-- [x] docs/CSS_GUIDE.md — how to write CSS targeting stickson's HTML structure
-
-## Phase 7 — README
-
-- [x] rewrite README.md to follow sleet-ai README.example.bun.md format
+- [ ] `create` command — test it actually works
+- [ ] `validate` command — test it reports useful errors
+- [ ] `--theme` flag in `build` — does it actually apply themes?
+- [ ] `--single` flag — verify it inlines JS/CSS into a single HTML file
+- [ ] `package.json` scripts: add `start` script that runs `bun bin/stickson.js dev examples/home.json`
 
 =====================
 <br/>
