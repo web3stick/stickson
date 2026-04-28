@@ -15,11 +15,13 @@ BIG FOCUS :: DO NOT TOUCH THIS SECTION
 
 never leave this empy should always be task here, with check boxes, rm complted tasks from prevouse run and leave only fresh uncomplted tasks here
 
-- [ ] **Schema audit - missing `article` in template_engine**: The schema defines an `article` element type but the template engine has no `case "article":` handler, causing it to silently render as `<!-- unknown element type: article -->`. Also fixed: `pre` element content was not HTML-escaped (XSS risk). Fix template_engine.ts to handle `article` type, add schema coverage for missing form/input/table elements.
+- [x] **Fresh clone + example verification**: Clone to a clean directory (not existing repo), run `bun install && bun run build`, then test all examples. Verified: `validate` works for both vanilla and sleet-css examples, `build` works for vanilla (3 pages: main, home, about) and sleet-css (1 page: index). `dev` server runs correctly. Fresh `bun install` was needed before `tsc` worked.
+
+- [x] **Schema audit - article element missing in template_engine**: The `article` element type was in the schema but had no handler in template_engine, rendering as `<!-- unknown element type: article -->`. Fixed. Also fixed: `pre` element content was not HTML-escaped (XSS risk).
+
+- [x] **Schema coverage gap - 17 missing HTML elements**: Added form, input, select, option, textarea, label, fieldset, legend, table, thead, tbody, tfoot, tr, td, th, colgroup, col to both the schema and template engine.
 
 - [ ] **Examples restructure**: Delete old example files, create clean `vanilla/` and `sleet-css/` example folders with minimal working content that demonstrates the core features.
-
-- [ ] **Schema coverage gap**: Missing form, input, select, textarea, table, thead, tbody, tr, td, th elements in both schema and template engine. Add these common HTML elements.
 
 - [ ] **Docs improvements**: Ensure docs/CLI.md, docs/INSTALL.md, docs/TUTORIAL.md are consistent with current CLI behavior. Add examples for routes, themes, and custom templates.
 
