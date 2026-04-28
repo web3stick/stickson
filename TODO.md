@@ -16,9 +16,9 @@
 
 ## Project Structure / Examples
 
-- [ ] Delete current `examples/` files (home.json, about.json, blog.json + out/) — they are one multi-page site that needs replacing
+- [x] Delete current `examples/` files (home.json, about.json, blog.json + out/) — they are one multi-page site that needs replacing
 - [x] New example creation flow via CLI: `stickson create my-site` scaffolds `src/content.json`, `package.json`, `README.md` with deps
-- [ ] Create example sites in `examples/` using different CSS approaches:
+- [x] Create example sites in `examples/` using different CSS approaches:
   - `examples/vanilla/` — plain HTML, no framework
   - `examples/sleet-css/` — uses a sleet-css theme (colorsnake-css, huggies-css, sticky-css, etc.)
   - Each example: self-contained folder with `src/`, `package.json`, `README.md`
