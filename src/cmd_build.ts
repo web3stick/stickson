@@ -1,4 +1,5 @@
 import * as path from "path";
+import * as fs from "fs";
 import { build_pages } from "./page_builder.js";
 
 // ============================================================
@@ -21,7 +22,7 @@ export function run_build(args: string[]) {
   if (!inputFile) {
     const cwd = process.cwd();
     const defaultPath = path.join(cwd, "content.json");
-    if (require("fs").existsSync(defaultPath)) {
+    if (fs.existsSync(defaultPath)) {
       inputFile = defaultPath;
     } else {
       console.error(

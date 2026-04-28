@@ -39,10 +39,31 @@ export function validate_content_json(json: object): validate_result {
     return { valid: true, errors: [] };
   }
 
-  const errors = (validate.errors || []).map((err) => ({
-    path: err.instancePath || "/",
-    message: err.message || "Unknown error",
-  }));
+  const errors = (validate.errors || []).map((err) => {
+    let message = err.message || "Unknown error";
+
+    // Build a user-friendly message based on the error keyword
+    if (err.keyword === "required") {
+      const paramKey = err.params?.missingProperty || "";
+      message = `missing required field: '${paramKey}'`;
+    } else if (err.keyword === "type") {
+      const expected = err.params?.type || "";
+      const received = typeof (err.data);
+      message = `expected ${expected}, got ${received}`;
+    } else if (err.keyword === "enum") {
+      const allowed = err.params?.allowedValues?.join(", ");
+      message = `must be one of: ${allowed}`;
+    } else if (err.keyword === "pattern") {
+      message = `does not match required pattern`;
+    } else if (err.keyword === "minimum" || err.keyword === "maximum") {
+      message = err.message || message;
+    }
+
+    return {
+      path: err.instancePath || "/",
+      message,
+    };
+  });
 
   console.log("====== JSON validation failed ======");
   return { valid: false, errors };

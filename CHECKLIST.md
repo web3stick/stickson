@@ -26,6 +26,7 @@ Run this every time before working on stickson.
 - [ ] `bun run tsc --noEmit` — verify no type errors
 - [ ] `bunx prettier . --write` — format code
 - [ ] git add + commit with message describing what was done
+- [ ] git push — push commits to origin
 - [ ] `git status` — confirm clean state
 
 ## Cron job self-check
