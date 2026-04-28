@@ -21,17 +21,28 @@
 
 ## Docs / README
 
-- [ ] `examples/README.md` and `bin/README.md` created — verify they're accurate
-- [ ] Main README should document the full CLI usage (all commands and flags)
-- [ ] `docs/INSTALL.md` — verify accuracy after recent changes
+- [x] `examples/README.md` and `bin/README.md` created — verify they're accurate
+- [x] Main README should document the full CLI usage (all commands and flags)
+- [x] `docs/INSTALL.md` — verify accuracy after recent changes
+- [ ] Add docs/DEV_DEPENDENCY.md — guide on using stickson as a dev dependency (not globally) in other projects
 
-## Nice to Have
+## Publishing / Distribution
 
-- [ ] `create` command — test it actually works
-- [ ] `validate` command — test it reports useful errors
-- [ ] `--theme` flag in `build` — does it actually apply themes?
-- [ ] `--single` flag — verify it inlines JS/CSS into a single HTML file
-- [ ] `package.json` scripts: add `start` script that runs `bun bin/stickson.js dev examples/home.json`
+- [x] `package.json` has correct `files`, `repository`, `homepage` for npm publish
+- [x] Published v0.0.1 to npm: https://www.npmjs.com/package/@web3stick/stickson
+
+## Agentic Workflow (for cron job self-improvement)
+
+The cron job (`stickson bugs and improvements`, job id: 99b5b084334e) should follow this workflow:
+
+1. **Test before and after** — run `bun run build` and `stickson validate examples/home.json` before and after any change
+2. **Smoke test the CLI** — `bun bin/stickson.js build examples/home.json --out /tmp/stickson-test-out && bun bin/stickson.js validate examples/home.json`
+3. **Real improvement loop**:
+   - Find one real bug or UX issue per run
+   - Fix it, verify it works
+   - Commit + push
+   - Mark the fix done in this TODO
+4. **Ship Discord summary** — after each run, summarize what was tested, what was found, what was fixed
 
 =====================
 <br/>
