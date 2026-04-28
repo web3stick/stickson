@@ -31,7 +31,7 @@ export function run_build(args: string[]) {
       console.error(
         "  --single    Output a single HTML file with inlined JS/CSS",
       );
-      console.error("  --out <dir> Output directory (default: ./out)");
+      console.error("  --out <dir> Output directory (default: ./dist)");
       console.error("  If input is a directory, builds all .json files in it");
       process.exit(1);
     }

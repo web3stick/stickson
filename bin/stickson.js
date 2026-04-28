@@ -85,7 +85,7 @@ Commands:
 
 Options for build:
   --single          Output single HTML file with inlined JS/CSS
-  --out <dir>       Output directory (default: ./out)
+  --out <dir>       Output directory (default: ./dist)
 
 Examples:
   stickson create my-site
