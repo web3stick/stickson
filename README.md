@@ -14,7 +14,9 @@ bun run tsc --noEmit
 bunx prettier . --write
 # publish
 bun run build
-npm publish --access public
+bun publish --dry-run
+bunx npm login
+bun publish --access public
 ```
 
 =====================
