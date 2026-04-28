@@ -1,6 +1,6 @@
 {
   "name": "@web3stick/stickson",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "JSON framework for making static pages",
   "type": "module",
   "main": "./dist/index.js",
@@ -20,7 +20,7 @@
     "type": "git",
     "url": "https://github.com/web3stick/stickson.git"
   },
-  "homepage": "https://github.com/web3stick/stickson#readme",
+  "homepage": "https://github.com/web3stick/stickson",
   "scripts": {
     "build": "tsc",
     "dev": "bun run --watch src/index.ts",

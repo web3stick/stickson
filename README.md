@@ -1,5 +1,7 @@
 # stickson
 
+🚧 this package is devloped and maintained with ai. stive to be agentic frindly if you want contribue and help build. WIP
+
 JSON framework for making static pages
 
 ---
