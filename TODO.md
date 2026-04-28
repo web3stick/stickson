@@ -48,7 +48,7 @@
 
 ## Phase 7 — README
 
-- [ ] rewrite README.md to follow sleet-ai README.example.bun.md format
+- [x] rewrite README.md to follow sleet-ai README.example.bun.md format
 
 =====================
 <br/>
