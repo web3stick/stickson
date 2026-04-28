@@ -14,17 +14,16 @@
 - [x] `dev` should serve the output (run an HTTP server with live reload) — currently it's just a file watcher that logs rebuilds
 - [x] Error messages should be user-friendly (no stack traces for invalid JSON, schema validation should list which field failed)
 
-## Repo Cleanliness / Structure
-
-- [ ] Audit published files — ensure `src/`, `docs/`, `examples/`, `CHECKLIST.md`, `TODO.md`, `PROMPT.md` are NOT in the published npm package (verified by `npm pack --dry-run` or checking `npm publish --dry-run --registry https://registry.npmjs.org` output)
-- [ ] Verify `dist/`, `bin/`, `schema/`, `themes/` are all that get published
-- [ ] Check that `.npmignore` correctly excludes everything it should
-
 ## Schema / Content Issues
 
 - [x] Schema is missing `article` element — added but verify all common HTML elements are covered (section, aside, figure, figcaption, etc.)
-- [ ] Verify all common HTML elements are covered — check schema for: section, aside, figure, figcaption, details, summary, mark, time, abbr, cite, code, pre, blockquote, hr
+- [ ] Audit schema for missing HTML elements — check for: aside, figure, figcaption, details, summary, mark, time, abbr, cite, code, pre, blockquote, hr
 - [ ] Consider: should the schema be more permissive (allow arbitrary HTML tags via `custom` type)?
+
+## Repo Cleanliness / Structure
+
+- [ ] Re-verify with `npm pack --dry-run` after any change to `package.json`, `files` field, or `.npmignore`
+- [ ] Add `prepublishOnly` script to `package.json` that runs `bun run build` automatically before publish
 
 ## Docs / README
 
@@ -32,6 +31,7 @@
 - [x] Main README should document the full CLI usage (all commands and flags)
 - [x] `docs/INSTALL.md` — verify accuracy after recent changes
 - [x] Add dev dependency usage to `docs/INSTALL.md` — install as dev dependency with `npm install -D @web3stick/stickson`, use via npx or local binary
+- [ ] Add `docs/DEV_DEPENDENCY.md` — full guide on using stickson as a local dev dependency with `file:` path
 
 ## Publishing / Distribution
 
@@ -45,7 +45,8 @@ The cron job (`stickson bugs and improvements`, job id: 99b5b084334e) should fol
 1. **Pre-flight check** — run `git status` and `npm pack --dry-run` to verify what would be published; fix `.npmignore` if wrong files show up
 2. **Smoke test** — `bun run build && bun bin/stickson.js validate examples/home.json && bun bin/stickson.js build examples/home.json --out /tmp/stickson-test-out`
 3. **Real improvement loop**:
-   - Find one real bug or UX issue per run (use systematic-debugging skill)
+   - Pick one item from this TODO that is not yet done
+   - Use `systematic-debugging` skill for any bugs
    - Fix it, verify it works
    - Commit + push
    - Mark the fix done in this TODO
