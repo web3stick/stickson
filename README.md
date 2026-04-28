@@ -19,7 +19,6 @@ bunx npm login
 bun publish --access public
 ```
 
-
 =====================
 <br/>
 copyright 2026 by web3stick.near

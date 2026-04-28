@@ -1,29 +1,10 @@
 # Stickson Sleet-CSS Example
 
-A stickson site using @sleet-css/sleet-css for styling via CDN.
-
-## Quick Start
-
-```sh
-bun install
-bun run build
-```
-
-Output goes to `dist/`.
-
-## Structure
-
-```
-sleet-css/
-├── src/
-│   └── content.json    # All page content in JSON
-├── package.json
-└── README.md
-```
+A stickson site using [@sleet-css/sleet-css](https://www.npmjs.com/package/@sleet-css/sleet-css) loaded from jsDelivr CDN.
 
 ## Theming
 
-This example uses @sleet-css/sleet-css loaded from jsDelivr CDN. The `theme.cssFile` in `content.json` points to the CDN URL:
+The `theme.cssFile` in `src/content.json` points to the CDN URL:
 
 ```json
 {
@@ -33,14 +14,29 @@ This example uses @sleet-css/sleet-css loaded from jsDelivr CDN. The `theme.cssF
 }
 ```
 
-You can switch to a different CSS file by changing `theme.cssFile` or by providing your own CSS via `theme.customCss`.
-
-## Customizing
-
-Edit `src/content.json` to change content. Add custom styles in the `head` style block to override or extend the theme.
+Switch themes or provide your own CSS by changing `theme.cssFile`.
 
 ## Commands
 
-- `bun run build` — build the site to `dist/`
-- `bun run dev` — watch for changes with live reload
-- `bun run validate` — check JSON against the schema
+Short (run inside this folder):
+
+```sh
+bun install
+bun run build
+bun run validate
+bun run dev
+bun run serve
+```
+
+Long (run from project root):
+
+```sh
+bun bin/stickson.js build examples/sleet-css/src/content.json --out examples/sleet-css/dist
+bun bin/stickson.js validate examples/sleet-css/src/content.json
+bun bin/stickson.js dev examples/sleet-css/src/content.json
+bun bin/stickson.js serve examples/sleet-css/src/content.json
+```
+
+=====================
+<br/>
+copyright 2026 by web3stick.near
