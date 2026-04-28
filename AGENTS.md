@@ -55,20 +55,3 @@ Stickson (`@web3stick/stickson`) is a JSON framework for making static pages.
 4. `git push` — push commits to origin
 5. `git status` — confirm clean state
 
-### Pre-flight (before publishing or after major changes)
-
-```sh
-bun run build
-npm pack --dry-run
-```
-
-Verify output contains only: `dist/`, `bin/`, `schema/`, `themes/`, `README.md`, `package.json`.
-If `src/`, `docs/`, `examples/`, `CHECKLIST.md`, `TODO.md`, `PROMPT.md` appear — fix `.npmignore`.
-
-### Smoke test
-
-```sh
-bun run build
-bun bin/stickson.js validate examples/home.json
-bun bin/stickson.js build examples/home.json --out /tmp/stickson-test-out
-```
