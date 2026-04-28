@@ -26,7 +26,8 @@
     "dev": "bun run --watch src/index.ts",
     "tsc": "tsc --noEmit",
     "prettier": "prettier . --write",
-    "typecheck": "bun run tsc && bun run prettier"
+    "typecheck": "bun run tsc && bun run prettier",
+    "prepublishOnly": "bun run build"
   },
   "keywords": [
     "static",

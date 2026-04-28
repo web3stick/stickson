@@ -33,7 +33,7 @@
 ## Repo Cleanliness / Structure
 
 - [ ] `npm pack --dry-run` after any change to `package.json`, `files` field, or `.npmignore`
-- [ ] Add `prepublishOnly` script to `package.json` that runs `bun run build` automatically before publish
+- [x] Add `prepublishOnly` script to `package.json` that runs `bun run build` automatically before publish
 - [ ] Type-check and lint: `bun run tsc --noEmit` and `bunx prettier . --write` should pass clean
 
 ## Docs / README
@@ -42,7 +42,7 @@
 - [x] Main README should document the full CLI usage (all commands and flags)
 - [x] `docs/INSTALL.md` — verify accuracy after recent changes
 - [x] Add dev dependency usage to `docs/INSTALL.md` — install as dev dependency with `npm install -D @web3stick/stickson`, use via npx or local binary
-- [ ] Add `docs/DEV_DEPENDENCY.md` — full guide on using stickson as a local dev dependency with `file:` path
+- [x] Add `docs/DEV_DEPENDENCY.md` — full guide on using stickson as a local dev dependency with `file:` path
 
 ## Publishing / Distribution
 
