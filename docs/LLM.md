@@ -1,4 +1,4 @@
-# LLM Guide for Stickson
+# @web3stick/stickson — LLM Guide
 
 Stickson is a JSON framework for generating static HTML pages.
 

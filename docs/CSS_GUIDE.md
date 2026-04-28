@@ -1,4 +1,4 @@
-# CSS Guide for Stickson
+# @web3stick/stickson — CSS Guide
 
 Stickson generates HTML with a predictable structure. This guide shows how to target each element.
 

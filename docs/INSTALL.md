@@ -1,6 +1,39 @@
-# Stickson - Install Guide
+# @web3stick/stickson — Install Guide
 
-Stickson is a JSON framework for making static pages.
+Stickson is a JSON framework for making static pages from JSON content files.
+
+## Install globally
+
+```bash
+npm install -g @web3stick/stickson
+```
+
+## Install as dev dependency
+
+In an existing project, add stickson as a dev dependency:
+
+```bash
+npm install -D @web3stick/stickson
+```
+
+Then use it via npx or the local binary:
+
+```bash
+npx stickson build content.json --out dist
+# or from node_modules
+./node_modules/.bin/stickson build content.json --out dist
+```
+
+With a package.json scripts section:
+
+```json
+{
+  "scripts": {
+    "build:site": "stickson build content.json --out dist",
+    "dev:site": "stickson dev content.json"
+  }
+}
+```
 
 ## Quick Start
 
@@ -52,11 +85,11 @@ my-site/
 
 ## CLI Commands
 
-- `stickson create <name>` - Scaffold a new project
-- `stickson validate <file>` - Validate JSON against schema
-- `stickson build [--single]` - Build static pages
-- `stickson serve <file>` - Serve with live reload
-- `stickson dev <file>` - Watch and rebuild on changes
+- `npx stickson create <name>` - Scaffold a new project
+- `npx stickson validate <file>` - Validate JSON against schema
+- `npx stickson build [--single]` - Build static pages
+- `npx stickson serve <file>` - Serve with live reload
+- `npx stickson dev <file>` - Watch and rebuild on changes
 
 ## Themes
 

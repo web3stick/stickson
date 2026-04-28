@@ -14,6 +14,12 @@
 - [x] `dev` should serve the output (run an HTTP server with live reload) — currently it's just a file watcher that logs rebuilds
 - [x] Error messages should be user-friendly (no stack traces for invalid JSON, schema validation should list which field failed)
 
+## Repo Cleanliness / Structure
+
+- [ ] Audit published files — ensure `src/`, `docs/`, `examples/`, `CHECKLIST.md`, `TODO.md`, `PROMPT.md` are NOT in the published npm package (verified by `npm pack --dry-run` or checking `npm publish --dry-run --registry https://registry.npmjs.org` output)
+- [ ] Verify `dist/`, `bin/`, `schema/`, `themes/` are all that get published
+- [ ] Check that `.npmignore` correctly excludes everything it should
+
 ## Schema / Content Issues
 
 - [x] Schema is missing `article` element — added but verify all common HTML elements are covered (section, aside, figure, figcaption, etc.)
@@ -25,7 +31,7 @@
 - [x] `examples/README.md` and `bin/README.md` created — verify they're accurate
 - [x] Main README should document the full CLI usage (all commands and flags)
 - [x] `docs/INSTALL.md` — verify accuracy after recent changes
-- [ ] Add docs/DEV_DEPENDENCY.md — guide on using stickson as a dev dependency (not globally) in other projects
+- [x] Add dev dependency usage to `docs/INSTALL.md` — install as dev dependency with `npm install -D @web3stick/stickson`, use via npx or local binary
 
 ## Publishing / Distribution
 
@@ -36,10 +42,10 @@
 
 The cron job (`stickson bugs and improvements`, job id: 99b5b084334e) should follow this workflow:
 
-1. **Test before and after** — run `bun run build` and `stickson validate examples/home.json` before and after any change
-2. **Smoke test the CLI** — `bun bin/stickson.js build examples/home.json --out /tmp/stickson-test-out && bun bin/stickson.js validate examples/home.json`
+1. **Pre-flight check** — run `git status` and `npm pack --dry-run` to verify what would be published; fix `.npmignore` if wrong files show up
+2. **Smoke test** — `bun run build && bun bin/stickson.js validate examples/home.json && bun bin/stickson.js build examples/home.json --out /tmp/stickson-test-out`
 3. **Real improvement loop**:
-   - Find one real bug or UX issue per run
+   - Find one real bug or UX issue per run (use systematic-debugging skill)
    - Fix it, verify it works
    - Commit + push
    - Mark the fix done in this TODO
