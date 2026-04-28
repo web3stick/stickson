@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Stickson site using @sleet-css/sleet-css via CDN",
   "private": true,
+  "devDependencies": {
+    "@web3stick/stickson": "file:../.."
+  },
   "scripts": {
     "build": "stickson build src/content.json --out dist",
     "dev": "stickson dev src/content.json",

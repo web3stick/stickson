@@ -38,3 +38,9 @@ You can switch to a different CSS file by changing `theme.cssFile` or by providi
 ## Customizing
 
 Edit `src/content.json` to change content. Add custom styles in the `head` style block to override or extend the theme.
+
+## Commands
+
+- `bun run build` — build the site to `dist/`
+- `bun run dev` — watch for changes with live reload
+- `bun run validate` — check JSON against the schema

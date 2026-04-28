@@ -1,0 +1,97 @@
+{
+  "version": "1.0",
+  "meta": {
+    "title": "About — My Vanilla Stickson Site",
+    "description": "Learn more about this stickson-powered site",
+    "author": "Developer",
+    "lang": "en"
+  },
+  "page": {
+    "head": [
+      {
+        "type": "style",
+        "content": "body { font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 2rem; line-height: 1.6; background: #fafafa; color: #333; }\nh1, h2, h3 { color: #222; line-height: 1.2; }\nh1 { font-size: 2.5rem; margin-bottom: 0.5rem; }\nheader { border-bottom: 1px solid #eee; padding-bottom: 1rem; margin-bottom: 2rem; }\nnav a { margin-right: 1rem; color: #0066cc; text-decoration: none; }\nnav a:hover { text-decoration: underline; }\nfooter { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #eee; color: #888; font-size: 0.9rem; }"
+      }
+    ],
+    "body": [
+      {
+        "type": "header",
+        "content": [
+          { "type": "h1", "content": "About" },
+          {
+            "type": "nav",
+            "content": [
+              { "type": "a", "href": "index.html", "content": "Home" },
+              { "type": "a", "href": "about.html", "content": "About" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "main",
+        "content": [
+          {
+            "type": "section",
+            "content": [
+              { "type": "h2", "content": "About This Site" },
+              {
+                "type": "p",
+                "content": "This site was built with the stickson JSON framework. Stickson lets you create static HTML pages using a simple JSON file — no complex tools required, just write your content and build."
+              },
+              {
+                "type": "p",
+                "content": "This is the vanilla CSS edition — plain, custom styles you can fully control."
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "content": [
+              { "type": "h2", "content": "Why Stickson?" },
+              {
+                "type": "ul",
+                "content": [
+                  {
+                    "type": "li",
+                    "content": "Simple JSON-based content — no HTML to write manually"
+                  },
+                  {
+                    "type": "li",
+                    "content": "Static output — host anywhere, no server needed"
+                  },
+                  {
+                    "type": "li",
+                    "content": "Full CSS control — use plain CSS or any framework"
+                  },
+                  {
+                    "type": "li",
+                    "content": "Fast builds — generate your entire site in milliseconds"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "content": [
+              { "type": "h2", "content": "Get Started" },
+              {
+                "type": "p",
+                "content": "Ready to build your own stickson site? Check out the docs to get started."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "footer",
+        "content": [
+          {
+            "type": "p",
+            "content": "Built with stickson — vanilla CSS edition"
+          }
+        ]
+      }
+    ]
+  }
+}
