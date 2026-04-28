@@ -12,7 +12,6 @@ BIG FOCUS :: DO NOT TOUCH THIS SECTION
 ## TO DO
 never leave this empy should always be task here, with check boxes, rm complted tasks from prevouse run and leave only fresh uncomplted tasks here
 
-- [ ] **AGENTS.md smoke test outdated**: references `examples/home.json` which does not exist. Real files are `examples/vanilla/src/content.json` and `examples/sleet-css/src/content.json`. Fix smoke test commands in AGENTS.md.
 - [ ] **Validate all CLI commands work**: `build`, `validate`, `dev`, `serve` for both vanilla and sleet-css examples. `dev` and `serve` not yet tested — server startup/response unverified.
 - [ ] **Build output inspection**: verify built HTML files in `/tmp/stickson-test-out` are correct and complete.
 - [x] **Pre-flight check**: run `npm pack --dry-run` inside the project root to verify only `dist/`, `bin/`, `schema/`, `themes/`, `README.md`, `package.json` are included. ✅ CLEAN — no leaks.
