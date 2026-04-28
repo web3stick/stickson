@@ -1,25 +1,66 @@
 # TODO
 
-BIG FOUS
+BIG FOUR
 
-- working exampkes
-- builds working, veify by checing output files
+- working examples
+- builds working, verify by checking output files
 - docs
-- keep this todo fomated this way, work on the to items check comepled, rm compled form previs run, add new ones that focus on these fous items. test, and verify that our packge as the featurs we need
+- keep this todo formatted this way, work on the to items check completed, rm completed from previous run, add new ones that focus on these four items. test, and verify that our package has the features we need
 
 ---
 
-- [x] Improve examples: fix links, add multi-page example, verify builds
-  - [x] Fix vanilla example links: replace `#about`, `#features` with relative paths like `page.html` for multi-page navigation
-  - [x] Add a multi-page example (e.g., two JSON files that link to each other via `href: "other.html"`)
-  - [x] Verify all builds produce valid HTML with correct relative links
-  - [x] Document the multi-page pattern in the example README
-- [x] Reorganize docs/ as a book with a README index
-  - [x] Create docs/README.md with links to all other docs/*.md files
-  - [x] Ensure docs/ has a tutorial guide covering: install, first project, multi-page, theming
-  - [x] Audit docs/ for stale npm references (should be bun)
-  - [x] Update examples/vanilla/README.md and examples/sleet-css/README.md with run commands
-- [x] Run all build/validate commands from project root for both examples
+- [x] 1. README.md — REMOVE the entire "Examples" section (the vanilla + sleet-css code blocks). Those belong in each example's own README.
+
+- [ ] 2. examples/README.md — CREATE:
+  - Simple README for the examples folder with:
+    - Overview of both examples (vanilla, sleet-css) pointing to each
+    - Create command section:
+      Short:
+      ```sh
+      bun bin/stickson.js create my-site
+      ```
+      Long (from project root):
+      ```sh
+      bun bin/stickson.js create examples/vanilla/my-site
+      ```
+
+- [ ] 3. examples/vanilla/README.md — SIMPLIFY:
+  - Remove tree directory structure
+  - Add two code blocks (short = run inside example folder, long = run from project root). Include ALL CLI commands: build, validate, serve, dev.
+    Short:
+    ```sh
+    bun install
+    bun run build
+    bun run validate
+    bun run dev
+    bun run serve
+    ```
+    Long:
+    ```sh
+    bun bin/stickson.js build examples/vanilla/src/content.json --out examples/vanilla/dist
+    bun bin/stickson.js validate examples/vanilla/src/content.json
+    bun bin/stickson.js dev examples/vanilla/src/content.json
+    bun bin/stickson.js serve examples/vanilla/src/content.json
+    ```
+
+- [ ] 4. examples/sleet-css/README.md — SIMPLIFY:
+  - Remove tree directory structure
+  - Add two code blocks (short = run inside example folder, long = run from project root). Include ALL CLI commands: build, validate, serve, dev.
+    Short:
+    ```sh
+    bun install
+    bun run build
+    bun run validate
+    bun run dev
+    bun run serve
+    ```
+    Long:
+    ```sh
+    bun bin/stickson.js build examples/sleet-css/src/content.json --out examples/sleet-css/dist
+    bun bin/stickson.js validate examples/sleet-css/src/content.json
+    bun bin/stickson.js dev examples/sleet-css/src/content.json
+    bun bin/stickson.js serve examples/sleet-css/src/content.json
+    ```
 
 =====================
 <br/>

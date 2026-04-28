@@ -19,13 +19,6 @@ bunx npm login
 bun publish --access public
 ```
 
----
-
-## Documentation
-
-- [Install Guide](docs/INSTALL.md) — install stickson and run your first build
-- [CSS Guide](docs/CSS_GUIDE.md) — targeting generated HTML elements with CSS
-- [LLM Guide](docs/LLM.md) — how stickson works for AI tooling
 
 =====================
 <br/>
