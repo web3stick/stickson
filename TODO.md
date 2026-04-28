@@ -38,20 +38,6 @@
 - [x] `package.json` has correct `files`, `repository`, `homepage` for npm publish
 - [x] Published v0.0.1 to npm: https://www.npmjs.com/package/@web3stick/stickson
 
-## Agentic Workflow (for cron job self-improvement)
-
-The cron job (`stickson bugs and improvements`, job id: 99b5b084334e) should follow this workflow:
-
-1. **Pre-flight check** — run `git status` and `npm pack --dry-run` to verify what would be published; fix `.npmignore` if wrong files show up
-2. **Smoke test** — `bun run build && bun bin/stickson.js validate examples/home.json && bun bin/stickson.js build examples/home.json --out /tmp/stickson-test-out`
-3. **Real improvement loop**:
-   - Pick one item from this TODO that is not yet done
-   - Use `systematic-debugging` skill for any bugs
-   - Fix it, verify it works
-   - Commit + push
-   - Mark the fix done in this TODO
-4. **Ship Discord summary** — after each run, summarize what was tested, what was found, what was fixed
-
 =====================
 <br/>
 copyright 2026 by web3stick.near
