@@ -1,6 +1,7 @@
 import * as http from "http";
 import * as fs from "fs";
 import * as path from "path";
+import { build_pages } from "./page_builder.js";
 
 // ============================================================
 function get_mime_type(filePath: string): string {
@@ -40,6 +41,18 @@ export function run_serve(args: string[]) {
 
   const jsonFile = path.resolve(filePath);
   const dir = path.dirname(jsonFile);
+  const outDir = path.join(dir, "out");
+
+  console.log(`====== Building: ${jsonFile} ======`);
+  const result = build_pages(jsonFile, { outDir });
+
+  if (!result.success) {
+    console.error("====== Build failed ======");
+    for (const err of result.errors) {
+      console.error(`  ${err}`);
+    }
+    process.exit(1);
+  }
 
   console.log(`====== Serving: ${jsonFile} ======`);
 
